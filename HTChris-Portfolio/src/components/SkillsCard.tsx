@@ -1,7 +1,7 @@
 import { codingIcons } from "../assets/coding icons/CodingIcons"
 
 
-const learningSkills = [ 'sass', 'codepen']
+const learningSkills = [ 'sass', 'figma']
 
 export const SkillsCard = () => {
 
@@ -12,7 +12,7 @@ export const SkillsCard = () => {
         {Object.entries(codingIcons).map(([iconName,c],i) => {
                 if (!learningSkills.includes(iconName.toString()) ) {
                     return (
-                        <div key={i} className="icon-card">
+                        <div key={i} className="icon-card flex-center">
                              <img className="icon-card-img" src={c.icon} alt={iconName.toString().toUpperCase()} />
                             <p className="icon-card-text">{iconName.toString().toUpperCase()}</p>
                         </div>

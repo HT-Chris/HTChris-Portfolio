@@ -3,6 +3,13 @@
 
 export const Navbar = () => {
 
+    const scrollToSection = (sectionId: string) => {
+        const targetSection = document.querySelector(sectionId);
+    
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
 
     return (
         <>
@@ -17,19 +24,19 @@ export const Navbar = () => {
                         <img src="" alt="" />
                     </div>
                     <li>
-                        <a href="">Home</a>
+                        <a href="#hero-section"  onClick={() => scrollToSection('#hero-section')}>Home</a>
                     </li>
                     <li>
-                        <a href="">Skills</a>
+                        <a href="#skills-section"  onClick={() => scrollToSection('#skills-section')}>Skills</a>
                     </li>
                     <li>
-                        <a href="">About Me</a>
+                        <a href="#about-section"  onClick={() => scrollToSection('#about-section')}>About Me</a>
                     </li>
                     <li>
-                        <a href="">Projects</a>
+                        <a href="#projects-section"  onClick={() => scrollToSection('#projects-section')}>Projects</a>
                     </li>
                     <li>
-                        <a href="">Contact</a>
+                        <a href="#contact-section"  >Contact</a>
                     </li>
                 </ul>
             </div>
