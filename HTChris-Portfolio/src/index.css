@@ -32,7 +32,6 @@ body {
 }
 
 main {
-    scroll-snap-type: y mandatory;
     flex-direction: column;
     margin: auto;
     width: 100%;
@@ -47,13 +46,16 @@ main {
 .container {
     max-width: 1000px;
     justify-content: space-between;
-    border: 3px dotted red;
+    /* border: 3px dotted red; */
     text-align: center;
     z-index: 5;
-    height: 100%;
     scroll-snap-align: start;
     scroll-snap-stop: always;
     z-index: 6;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
 }
 
 section {
@@ -63,6 +65,20 @@ section {
     /* scroll-snap-stop: always; */
     z-index: 6;
     padding: 5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+header {
+    margin: 2rem;
+    font-size: 5rem;
 }
 
 .scroll-snap {
@@ -80,59 +96,79 @@ section {
     flex-direction: column;
 }
 
-
-/* .parallax {
-    width: 100%;
-    min-height: 100vh;
-    display: grid;
-    grid-template-areas: stack;
-    place-items: center;
-    scroll-snap-align: start;
-} */
-
 .clouds-1,
 .clouds-2 {
     position: absolute;
     display: flex;
     justify-content: space-between;
     width: 80%;
+    height: 100%;
 }
 
 .clouds-1 {
-    transform: translateZ(-30px) scale(3);
+    width: 100%;
+    height: 100%;
     z-index: 3;
 }
 
 .clouds-2 {
     transform: translateZ(-5px) scale(1.5);
     z-index: 3;
-    width: 60%;
+    width: 100%;
 }
 
-.small-cloud {
-    background-color: var(--bright-pink-crayola);
-    height: 50px;
-    width: 500px;
+.full-width {
+    width: 100%;
 }
 
-.big-cloud {
-    background-color: var(--sunglow);
-    height: 100px;
-    width: 1000px;
+.flipped-img {
+    transform: scaleX(-1);
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+.raised-img {
+    transform: translateY(50rem);
 }
 
-a:visited {
-    color: inherit;
+.img-left {
+    transform: translateX(40rem);
 }
 
-header {
-    margin: 2rem;
-    font-size: 5rem;
+.img-right {
+    transform: translateX(-40rem);
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    object-fit: cover;
+}
+
+.small-img {
+    width: 200px;
+    height: 200px;
+}
+
+.rotate-1 {
+    transform: rotate(-12deg) translateX(40rem);
+}
+
+.rotate-2 {
+    transform: rotate(-12deg) translate(-38rem, -18rem);
+    ;
+}
+
+.darker {
+    filter: brightness(80%);
+}
+
+.brighter {
+    filter: brightness(120%);
+}
+
+.lower {
+    transform: translateY(15rem);
 }
 
 
@@ -153,6 +189,7 @@ header {
     max-width: 1000px;
     align-items: end;
     padding-bottom: 1rem;
+    position: relative;
 }
 
 #nav-items-container ul {
@@ -168,6 +205,13 @@ header {
 #sun-moon-container {
     position: absolute;
     z-index: 5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50px;
+    padding: 1rem;
+    height: 50px;
+    background-color: black;
 }
 
 
@@ -219,15 +263,52 @@ header {
 /* About */
 
 #about-section {
-    background: linear-gradient( var(--bittersweet), var(--honolulu-blue));
+    background: linear-gradient( var(--honolulu-blue), var(--oxford-blue));
 }
 
 
 /* Projects */
 
 #projects-section {
-    background: linear-gradient( var(--honolulu-blue), var(--oxford-blue));
+    background: linear-gradient( var(--bittersweet), var(--honolulu-blue));
 }
+
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr, 4fr;
+    box-shadow: 5px 5px 15px black;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.project-img {
+    grid-column: 1;
+    grid-row: 1/span 5;
+    width: 250px;
+    height: 200px;
+    border: 3px solid red;
+}
+
+.project-card-text {
+    grid-column: 2;
+    grid-row: 1/span 5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: left;
+}
+
+.project-card-text h3 {}
+
+.skills-list {
+    color: lightblue;
+    font-style: italic;
+    text-shadow: 2px 2px 5px black;
+}
+
+.project-card-links {}
 
 
 /* Contact */

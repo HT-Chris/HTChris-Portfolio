@@ -1,7 +1,7 @@
 
 
-
 export const Navbar = () => {
+
 
     const scrollToSection = (sectionId: string) => {
         const targetSection = document.querySelector(sectionId);
@@ -18,11 +18,8 @@ export const Navbar = () => {
 
             <div id="nav-items-container" className="flex-center">
 
+              
                 <ul>
-                    <div id="sun-moon-container">
-                        <img src="" alt="" />
-                        <img src="" alt="" />
-                    </div>
                     <li>
                         <a href="#hero-section"  onClick={() => scrollToSection('#hero-section')}>Home</a>
                     </li>
@@ -30,10 +27,10 @@ export const Navbar = () => {
                         <a href="#skills-section"  onClick={() => scrollToSection('#skills-section')}>Skills</a>
                     </li>
                     <li>
-                        <a href="#about-section"  onClick={() => scrollToSection('#about-section')}>About Me</a>
+                        <a href="#projects-section"  onClick={() => scrollToSection('#projects-section')}>Projects</a>
                     </li>
                     <li>
-                        <a href="#projects-section"  onClick={() => scrollToSection('#projects-section')}>Projects</a>
+                        <a href="#about-section"  onClick={() => scrollToSection('#about-section')}>About Me</a>
                     </li>
                     <li>
                         <a href="#contact-section"  >Contact</a>
