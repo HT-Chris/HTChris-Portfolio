@@ -16,7 +16,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'PT Sans', sans-serif;
+    /* font-family: 'PT Sans', sans-serif; */
+    font-family: 'Slabo 27px', serif;
 }
 
 html {
@@ -46,7 +47,6 @@ main {
 .container {
     max-width: 1000px;
     justify-content: space-between;
-    /* border: 3px dotted red; */
     text-align: center;
     z-index: 5;
     scroll-snap-align: start;
@@ -62,7 +62,6 @@ section {
     height: 100vh;
     width: 100%;
     scroll-snap-align: start;
-    /* scroll-snap-stop: always; */
     z-index: 6;
     padding: 5rem;
 }
@@ -77,7 +76,6 @@ a:visited {
 }
 
 header {
-    margin: 2rem;
     font-size: 5rem;
 }
 
@@ -171,8 +169,25 @@ header {
     transform: translateY(15rem);
 }
 
+.profile-img {
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+    transform: translateY(5px), scaleX(-1);
+    border: 5px solid var(--sunglow);
+    border-radius: 10px;
+}
+
 
 /* Navbar */
+
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
 
 #navbar {
     width: 100%;
@@ -180,21 +195,33 @@ header {
     position: fixed;
     background-color: var(--honolulu-blue);
     box-shadow: 5px 5px 15px black;
-    z-index: 9;
+    z-index: 20;
+    height: 60px;
+}
+
+#nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 1rem;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 50px;
 }
 
 #nav-items-container {
-    height: 60px;
     width: 100%;
     max-width: 1000px;
-    align-items: end;
-    padding-bottom: 1rem;
     position: relative;
+    justify-content: space-between;
 }
 
 #nav-items-container ul {
     z-index: 10;
-    width: 100%;
+    min-width: 400px;
     justify-content: space-between;
     display: flex;
     gap: 1rem;
@@ -202,16 +229,33 @@ header {
     color: white;
 }
 
-#sun-moon-container {
-    position: absolute;
-    z-index: 5;
+#nav-items-container li {
+    cursor: pointer;
+}
+
+.social-media-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 50px;
-    padding: 1rem;
-    height: 50px;
-    background-color: black;
+}
+
+.social-media-links {
+    height: 35px;
+    width: 35px;
+    object-fit: cover;
+}
+
+.icon-padding {
+    padding: 4px;
+}
+
+.icon-padding-2 {
+    padding: 2px;
+}
+
+.nav-icon-links {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    cursor: pointer;
 }
 
 
@@ -220,6 +264,51 @@ header {
 #hero-section {
     background: linear-gradient( var(--honolulu-blue), var(--light-cyan));
     padding-top: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    ;
+}
+
+#hero-left {
+    margin-right: 2rem;
+    gap: 3rem;
+}
+
+#hero-header {
+    align-self: flex-start;
+    transform: translate( -120px, 0);
+}
+
+#hero-header header {
+    font-size: 8rem;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+}
+
+#hero-text {
+    max-width: 500px;
+    font-size: 1.2rem;
+    gap: 1rem;
+}
+
+.btn-contact {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border: 3px solid var(--light-cyan);
+    border-radius: 50px;
+    padding: 1rem;
+    font-size: 1.5rem;
+    align-self: flex-end;
+    color: white;
+    text-shadow: 2px 2px 5px black;
+    cursor: pointer;
+}
+
+#hero-image {
+    width: 400px;
+    object-fit: contain;
+    border-radius: 10px;
 }
 
 
@@ -233,6 +322,7 @@ header {
     min-width: 600px;
     justify-content: space-between;
     padding: 2rem;
+    font-family: 'Cedarville Cursive', cursive;
 }
 
 #skills-bottom {
@@ -244,9 +334,13 @@ header {
 #skills-container {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1rem;
+    gap: 3rem;
     margin: 2rem;
     color: white;
+}
+
+#currently-learning h3 {
+    font-size: 1.5rem;
 }
 
 .icon-card {
@@ -255,15 +349,35 @@ header {
     font-weight: 900;
 }
 
-.icon-card-img {}
+.icon-card-img {
+    height: 100px;
+    weight: 100px;
+}
 
-.icon-card-text {}
+.icon-card-text {
+    color: white;
+    font-weight: 900;
+}
 
 
 /* About */
 
 #about-section {
     background: linear-gradient( var(--honolulu-blue), var(--oxford-blue));
+}
+
+#about-section header {
+    color: white;
+}
+
+#about-left {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 3rem;
 }
 
 
@@ -308,11 +422,110 @@ header {
     text-shadow: 2px 2px 5px black;
 }
 
-.project-card-links {}
+.project-card-links {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+
+.btn-link {
+    border: 5px solid transparent;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 900;
+    padding: 0;
+}
+
+.btn-link:hover {
+    background-color: var(--bright-pink-crayola);
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
 
 
 /* Contact */
 
 #contact-section {
     background: var(--oxford-blue);
+    text-align: center;
 }
+
+#contact-container {
+    gap: 2rem;
+}
+
+#contact-container h2 {
+    font-size: 2rem;
+}
+
+#contact-info-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contact-card {
+    height: 100px;
+    width: 100px;
+    background-color: grey;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+}
+
+.contact-card:hover {
+    transform: scale(1.4);
+    transition: all 0.5s ease-in-out;
+}
+
+#contact-Email {
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+#contact-Email:hover {
+    background-color: red;
+    color: white;
+}
+
+#contact-Github:hover {
+    background-color: rgb( 64, 120, 192);
+    color: white;
+}
+
+#contact-TikTok:hover {
+    background: linear-gradient( rgb(254, 40, 88), rgb(42, 240, 234));
+    color: white;
+}
+
+#contact-Linkedin:hover {
+    background-color: rgb(10, 102, 194);
+    color: white;
+}
+
+#contact-Youtube:hover {
+    background-color: red;
+    color: white;
+}
+
+#email-address {
+    opacity: 0;
+    color: black;
+    transition: all 0.5s ease-in-out;
+}
+
+.contact-card:hover #email-address {
+    opacity: 1;
+    color: inherit;
+}
+
+.contact-icon {
+    height: 50px;
+    width: 50px;
+}
+
+.email-icon {}

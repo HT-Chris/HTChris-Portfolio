@@ -23,8 +23,8 @@ export const codingIcons = {
         simple: '/src/assets/coding icons/typescript-plain.svg',
         simpleText:'',
     },
-    codepen:{
-        icon:'/src/assets/coding icons/codepen-original-wordmark.svg',
+    npm:{
+        icon:'/src/assets/coding icons/icons8-npm-480.png',
         iconText:'',
         simple: '/src/assets/coding icons/codepen-plain.svg',
         simpleText:'',
