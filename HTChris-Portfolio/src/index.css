@@ -351,7 +351,7 @@ header {
 
 .icon-card-img {
     height: 100px;
-    weight: 100px;
+    width: 100px;
 }
 
 .icon-card-text {
