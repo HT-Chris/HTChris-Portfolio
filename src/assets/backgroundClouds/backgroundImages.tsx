@@ -1,4 +1,4 @@
-export const backgroundClouds = [
+const backgroundClouds = [
     'src/assets/backgroundClouds/cloud about 1.png',
     'src/assets/backgroundClouds/cloud about 2.png',
     '/src/assets/backgroundClouds/cloud hero 3.png',
@@ -15,3 +15,5 @@ export const backgroundClouds = [
     '/src/assets/backgroundClouds/cloud contact 3.png',
 
 ]
+
+export default backgroundClouds

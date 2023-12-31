@@ -1,11 +1,11 @@
 import { Navbar } from './components/Navbar'
 import { SkillsCard } from './components/SkillsCard'
-import { codingIcons } from './assets/coding icons/CodingIcons'
 import { useRef } from 'react';
-import { backgroundClouds } from './assets/backgroundClouds/backgroundImages'
 import { ProjectCard } from './components/ProjectCard';
 import { ContactCard } from './components/ContactCard';
-import { socialMediaIconList } from './assets/socialMediaIcons/socialIconList';
+import socialMediaIconList from './assets/socialMediaIcons/socialIconList';
+import backgroundClouds  from './assets/backgroundClouds/backgroundImages'
+import codingIcons  from './assets/coding icons/CodingIcons'
 import artProfileImg from './assets/miscImg/art profile img.png'
 import profileImg  from './assets/miscImg/profile img.png'
 import emailIcon from './assets/socialMediaIcons/icons8-email-100.png'

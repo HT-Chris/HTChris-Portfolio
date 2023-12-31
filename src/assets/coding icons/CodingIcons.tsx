@@ -1,4 +1,4 @@
-export const codingIcons = {
+const codingIcons = {
     html:{
         icon:'/src/assets/coding icons/html5-original.svg',
         iconText:'/src/assets/coding icons/html5-original-wordmark.svg',
@@ -63,3 +63,5 @@ export const codingIcons = {
         simpleText:'/src/assets/coding icons/vscode-plain-wordmark.svg',
     },
 }
+
+export default codingIcons;

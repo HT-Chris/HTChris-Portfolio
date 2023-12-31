@@ -1,4 +1,4 @@
-export const socialMediaIconList= [
+const socialMediaIconList= [
     {
         icon: '/src/assets/socialMediaIcons/icons8-github-96.png',
         text: 'Github',
@@ -36,3 +36,5 @@ export const socialMediaNavList= [
         link: ''},
    
 ]
+
+export  default socialMediaIconList;
