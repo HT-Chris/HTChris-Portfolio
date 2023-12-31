@@ -1,6 +1,6 @@
 export const backgroundClouds = [
-    '/src/assets/backgroundClouds/cloud hero 1.png',
-    '/src/assets/backgroundClouds/cloud hero 2.png',
+    'src/assets/backgroundClouds/cloud about 1.png',
+    'src/assets/backgroundClouds/cloud about 2.png',
     '/src/assets/backgroundClouds/cloud hero 3.png',
     '/src/assets/backgroundClouds/cloud skill 1.png',
     '/src/assets/backgroundClouds/cloud skill 2.png',
