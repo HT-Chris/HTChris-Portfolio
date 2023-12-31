@@ -20,6 +20,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
+  "include": ["src", "public/backgroundClouds", "public/coding icons", "assets", "public/socialMediaIcons"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

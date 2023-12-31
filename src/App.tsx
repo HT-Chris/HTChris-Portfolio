@@ -3,9 +3,9 @@ import { SkillsCard } from './components/SkillsCard'
 import { useRef } from 'react';
 import { ProjectCard } from './components/ProjectCard';
 import { ContactCard } from './components/ContactCard';
-import socialMediaIconList from './assets/socialMediaIcons/socialIconList';
-import backgroundClouds  from './assets/backgroundClouds/backgroundImages'
-import codingIcons  from './assets/coding icons/CodingIcons'
+import socialMediaIconList from '../assets/socialMediaIcons/socialIconListt';
+import backgroundClouds  from '../public/backgroundClouds/backgroundImages'
+import codingIcons  from '../public/coding icons/CodingIcons'
 import artProfileImg from './assets/miscImg/art profile img.png'
 import profileImg  from './assets/miscImg/profile img.png'
 import emailIcon from './assets/socialMediaIcons/icons8-email-100.png'

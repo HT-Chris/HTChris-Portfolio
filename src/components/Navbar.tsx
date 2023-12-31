@@ -1,6 +1,6 @@
 import { IParallax } from '@react-spring/parallax';
 import { RefObject } from 'react';
-import  { socialMediaNavList } from '../assets/socialMediaIcons/socialIconList'
+import  { socialMediaNavList } from '../../assets/socialMediaIcons/socialIconListist'
 import logo from '../assets/miscImg/HT Logo copy.png'
 
 
