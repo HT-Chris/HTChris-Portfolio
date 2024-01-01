@@ -1,11 +1,12 @@
 import { Navbar } from './components/Navbar'
 import { SkillsCard } from './components/SkillsCard'
+import  codingIcons  from './assets/coding icons/CodingIcons'
 import { useRef } from 'react';
+import  backgroundClouds  from './assets/backgroundClouds/backgroundImages'
+import cloud0 from './assets/backgroundClouds/cloud hero 1.png'
 import { ProjectCard } from './components/ProjectCard';
 import { ContactCard } from './components/ContactCard';
-import socialMediaIconList from '../assets/socialMediaIcons/socialIconListt';
-import backgroundClouds  from '../public/backgroundClouds/backgroundImages'
-import codingIcons  from '../public/coding icons/CodingIcons'
+import  socialMediaIconList  from './assets/socialMediaIcons/socialIconList';
 import artProfileImg from './assets/miscImg/art profile img.png'
 import profileImg  from './assets/miscImg/profile img.png'
 import emailIcon from './assets/socialMediaIcons/icons8-email-100.png'
@@ -24,19 +25,6 @@ function App() {
     }
   }
 
-  /**
-   * 
-   * have a slow nav scroll to each section 
-   * 
-   * take pictures 
-   * 
-   * npm
-   * 
-   * project card
-   * 
-   * social links, contacts
-   */
-  
 
   return (
     <>
@@ -47,7 +35,7 @@ function App() {
           <section id='hero-section' className='flex-center column'>
             <ParallaxLayer speed={0.2} className='flex-center '>
               <div className="clouds-1">
-                <img src={backgroundClouds[0]} className='cover' alt="Clouds" />
+                <img src={cloud0} className='cover' alt="Clouds" />
               </div>
             </ParallaxLayer>
             <ParallaxLayer speed={.4} className='flex-center'>

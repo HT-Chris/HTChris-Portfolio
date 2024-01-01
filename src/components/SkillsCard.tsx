@@ -1,4 +1,4 @@
-import { codingIcons } from "../../public/coding icons/CodingIcons"
+import  codingIcons  from "../assets/coding icons/CodingIcons"
 
 
 const learningSkills = [ 'sass', 'figma']
