@@ -1,8 +1,28 @@
 import { IParallax } from '@react-spring/parallax';
 import { RefObject } from 'react';
-import   socialMediaNavList  from '../assets/socialMediaIcons/socialIconList'
+// import   socialMediaNavList  from '../assets/socialMediaIcons/socialIconList'
 import logo from '../assets/miscImg/HT Logo copy.png'
 
+
+const socialMediaNavList= [
+    {
+         icon: '/src/assets/socialMediaIcons/icons8-github-96.png',
+         text: 'Github',
+         link: ''},
+     {
+         icon: '/src/assets/socialMediaIcons/icons8-tiktok-100.png',
+         text: 'TikTok',
+         link: ''},
+     {
+         icon: '/src/assets/socialMediaIcons/icons8-linkedin.svg',
+         text: 'Linkedin',
+         link: ''},
+     {
+         icon: '/src/assets/socialMediaIcons/icons8-youtube-100.png',
+         text: 'Youtube',
+         link: ''},
+    
+ ]
 
 type pScroll = {
     scrollTo: (page: number) => void | null

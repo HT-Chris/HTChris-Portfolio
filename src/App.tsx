@@ -2,18 +2,51 @@ import { Navbar } from './components/Navbar'
 import { SkillsCard } from './components/SkillsCard'
 import  codingIcons  from './assets/coding icons/CodingIcons'
 import { useRef } from 'react';
-import  backgroundClouds  from './assets/backgroundClouds/backgroundImages'
 import cloud0 from './assets/backgroundClouds/cloud hero 1.png'
+import cloud1 from './assets/backgroundClouds/cloud hero 1.png'
+import cloud2 from './assets/backgroundClouds/cloud hero 2.png'
+import cloud3 from './assets/backgroundClouds/cloud hero 3.png'
+import cloud4 from './assets/backgroundClouds/cloud skill 1.png'
+import cloud5 from './assets/backgroundClouds/cloud skill 2.png'
+import cloud6 from './assets/backgroundClouds/cloud skill 3.png'
+import cloud7 from './assets/backgroundClouds/cloud skill 4.png'
+import cloud8 from './assets/backgroundClouds/cloud project 1.png'
+import cloud9 from './assets/backgroundClouds/cloud project 2.png'
+import cloud10 from './assets/backgroundClouds/cloud about 1.png'
+import cloud11 from './assets/backgroundClouds/cloud about 2.png'
+import cloud12 from './assets/backgroundClouds/cloud contact 1.png'
+import cloud13 from './assets/backgroundClouds/cloud contact 2.png'
+import cloud14 from './assets/backgroundClouds/cloud contact 3.png'
 import { ProjectCard } from './components/ProjectCard';
 import { ContactCard } from './components/ContactCard';
-import  socialMediaIconList  from './assets/socialMediaIcons/socialIconList';
+// import  socialMediaIconList  from './assets/socialMediaIcons/socialIconList';
 import artProfileImg from './assets/miscImg/art profile img.png'
 import profileImg  from './assets/miscImg/profile img.png'
 import emailIcon from './assets/socialMediaIcons/icons8-email-100.png'
 
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 
+// import  backgroundClouds  from './assets/backgroundClouds/backgroundImages'
 
+const socialMediaIconList= [
+  {
+      icon: '/src/assets/socialMediaIcons/icons8-github-96.png',
+      text: 'Github',
+      link: ''},
+  {
+      icon: '/src/assets/socialMediaIcons/icons8-tiktok-100.png',
+      text: 'TikTok',
+      link: ''},
+  {
+      icon: '/src/assets/socialMediaIcons/icons8-linkedin.svg',
+      text: 'Linkedin',
+      link: ''},
+  {
+      icon: '/src/assets/socialMediaIcons/icons8-youtube-100.png',
+      text: 'Youtube',
+      link: ''},
+ 
+]
 
 function App() {
   const ref = useRef<IParallax>(null);
@@ -40,14 +73,14 @@ function App() {
             </ParallaxLayer>
             <ParallaxLayer speed={.4} className='flex-center'>
               <div className="clouds-2">
-                <img src={backgroundClouds[1]}  className='cover darker img-left rotate-1 '  alt="Clouds" />
-                <img src={backgroundClouds[1]}  className='cover darker img-left rotate-2 '  alt="Clouds" />
+                <img src={cloud3}  className='cover darker img-left rotate-1 '  alt="Clouds" />
+                <img src={cloud1}  className='cover darker img-left rotate-2 '  alt="Clouds" />
               </div>
             </ParallaxLayer>
             <ParallaxLayer speed={1} className='flex-center'>
               <div className="clouds-2 lower">
-                <img src={backgroundClouds[2]}  className='cover rotate flipped-img img-right brighter'  alt="Clouds" />
-                <img src={backgroundClouds[2]}  className='cover rotate flipped-img rotate-1 img-right brighter'  alt="Clouds" />
+                <img src={cloud2}  className='cover rotate flipped-img img-right brighter'  alt="Clouds" />
+                <img src={cloud2}  className='cover rotate flipped-img rotate-1 img-right brighter'  alt="Clouds" />
               </div>
             </ParallaxLayer>
 
@@ -72,17 +105,17 @@ function App() {
         <section id='skills-section' className='flex-center'>
           <ParallaxLayer speed={0.2} className='flex-center' offset={.99}>
             <div className="clouds-1">
-              <img src={backgroundClouds[3]} className='cover flipped-img' alt="Clouds" />
+              <img src={cloud4} className='cover flipped-img' alt="Clouds" />
             </div>
           </ParallaxLayer>
           <ParallaxLayer speed={0.4} className='flex-center' offset={.99}>
               <div className="clouds-2">
-                <img src={backgroundClouds[8]} className='cover flipped-img' alt="Clouds" />
+                <img src={cloud5} className='cover flipped-img' alt="Clouds" />
               </div>
           </ParallaxLayer>
-          <ParallaxLayer speed={0.4} className='flex-center' offset={.99}>
+          <ParallaxLayer speed={0.6} className='flex-center' offset={.99}>
             <div className="clouds-2">
-              <img src={backgroundClouds[4]} className='cover darker' alt="Clouds" />
+              <img src={cloud11} className='cover ' alt="Clouds" />
             </div>
           </ParallaxLayer>
 
@@ -104,17 +137,17 @@ function App() {
       <section id='projects-section' className='flex-center'>
         <ParallaxLayer speed={0.2} className='flex-center' offset={1.99}>
           <div className="clouds-1">
-            <img src={backgroundClouds[5]} className='cover' alt="Clouds" />
+            <img src={cloud5} className='cover' alt="Clouds" />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer speed={0.4} className='flex-center' offset={1.99}>
+        <ParallaxLayer speed={0.9} className='flex-center' offset={1.99}>
           <div className="clouds-2">
-            <img src={backgroundClouds[8]} className='cover' alt="Clouds" />
+            <img src={cloud7} className='cover' alt="Clouds" />
           </div>
         </ParallaxLayer>
-        <ParallaxLayer speed={0.4} className='flex-center' offset={1.99}>
+        <ParallaxLayer speed={0.7} className='flex-center' offset={1.99}>
           <div className="clouds-2">
-            <img src={backgroundClouds[6]} className='cover' alt="Clouds" />
+            <img src={cloud6} className='cover' alt="Clouds" />
           </div>
         </ParallaxLayer>
 
@@ -131,18 +164,18 @@ function App() {
       <section id='about-section' className='flex-center'>
           <ParallaxLayer speed={0.4} className='flex-center' offset={2.5}>
             <div className="clouds-2">
-              <img src={backgroundClouds[9]} className='cover' alt="Clouds" />
+              <img src={cloud10} className='cover' alt="Clouds" />
             </div>
           </ParallaxLayer>
           <ParallaxLayer speed={0.2} className='flex-center' offset={2.5}>
             <div className="clouds-1">
-              <img src={backgroundClouds[7]} className='cover' alt="Clouds" />
+              <img src={cloud8} className='cover' alt="Clouds" />
             </div>
           </ParallaxLayer>
           <ParallaxLayer speed={0.7} className='flex-center' offset={2.5}>
             <div className="clouds-1">
-              <img src={backgroundClouds[1]} className='cover darker img-left' alt="Clouds" />
-              <img src={backgroundClouds[1]} className='cover darker img-right rotate-2' alt="Clouds" />
+              <img src={cloud9} className='cover darker img-left' alt="Clouds" />
+              {/* <img src={cloud11} className='cover darker img-right rotate-2' alt="Clouds" /> */}
             </div>
           </ParallaxLayer>
           
@@ -164,22 +197,22 @@ function App() {
       
           <ParallaxLayer speed={0.2} className='flex-center' offset={3}>
             <div className="clouds-1">
-            {/* <img src={backgroundClouds[10]} className='cover' alt="Clouds" /> */}
+            {/* <img src={backgroundClouds.cloud11} className='cover' alt="Clouds" /> */}
             </div>
           </ParallaxLayer>
           <ParallaxLayer speed={0.2} className='flex-center' offset={3}>
             <div className="clouds-1">
-              <img src={backgroundClouds[12]} className='cover' alt="Clouds" />
+              <img src={cloud12} className='cover' alt="Clouds" />
             </div>
           </ParallaxLayer>
           <ParallaxLayer speed={0.4} className='flex-center' offset={3}>
             <div className="clouds-2">
-              <img src={backgroundClouds[11]} className='cover' alt="Clouds" />
+              <img src={cloud13} className='cover' alt="Clouds" />
             </div>
           </ParallaxLayer>
           <ParallaxLayer speed={0.4} className='flex-center' offset={3}>
             <div className="clouds-1">
-              <img src={backgroundClouds[13]} className='cover ' alt="Clouds" />
+              <img src={cloud14} className='cover ' alt="Clouds" />
             </div>
           </ParallaxLayer>
 
