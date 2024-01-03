@@ -24,25 +24,30 @@ import artProfileImg from './assets/miscImg/art profile img.png'
 import profileImg  from './assets/miscImg/profile img.png'
 import emailIcon from './assets/socialMediaIcons/icons8-email-100.png'
 
+import githubIcon from '/src/assets/socialMediaIcons/icons8-github-96.png'
+import tiktokIcon from '/src/assets/socialMediaIcons/icons8-tiktok-100.png'
+import linkedinIcon from '/src/assets/socialMediaIcons/icons8-linkedin.svg'
+import youtubeIcon from '/src/assets/socialMediaIcons/icons8-youtube-100.png'
+
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 
 // import  backgroundClouds  from './assets/backgroundClouds/backgroundImages'
 
 const socialMediaIconList= [
   {
-      icon: '/src/assets/socialMediaIcons/icons8-github-96.png',
+      icon: githubIcon,
       text: 'Github',
       link: ''},
   {
-      icon: '/src/assets/socialMediaIcons/icons8-tiktok-100.png',
+      icon: tiktokIcon,
       text: 'TikTok',
       link: ''},
   {
-      icon: '/src/assets/socialMediaIcons/icons8-linkedin.svg',
+      icon: linkedinIcon,
       text: 'Linkedin',
       link: ''},
   {
-      icon: '/src/assets/socialMediaIcons/icons8-youtube-100.png',
+      icon: youtubeIcon,
       text: 'Youtube',
       link: ''},
  
