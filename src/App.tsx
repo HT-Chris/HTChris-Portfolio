@@ -24,10 +24,10 @@ import artProfileImg from './assets/miscImg/art profile img.png'
 import profileImg  from './assets/miscImg/profile img.png'
 import emailIcon from './assets/socialMediaIcons/icons8-email-100.png'
 
-import githubIcon from '/src/assets/socialMediaIcons/icons8-github-96.png'
-import tiktokIcon from '/src/assets/socialMediaIcons/icons8-tiktok-100.png'
-import linkedinIcon from '/src/assets/socialMediaIcons/icons8-linkedin.svg'
-import youtubeIcon from '/src/assets/socialMediaIcons/icons8-youtube-100.png'
+import githubIcon from './assets/socialMediaIcons/icons8-github-96.png'
+import tiktokIcon from './assets/socialMediaIcons/icons8-tiktok-100.png'
+import linkedinIcon from './assets/socialMediaIcons/icons8-linkedin.svg'
+import youtubeIcon from './assets/socialMediaIcons/icons8-youtube-100.png'
 
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 
