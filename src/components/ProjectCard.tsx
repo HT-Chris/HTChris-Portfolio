@@ -1,21 +1,36 @@
+import { Link } from 'react-router-dom';
+
+type ProjectType = {
+    thumbnail:string,
+    title:string,
+    skills:string[],
+    details:string,
+    links:string[],
+
+}
 
 
-export const ProjectCard = () => {
+type ProjectCardType={
+    project:ProjectType
+}
+export const ProjectCard = ({project} : ProjectCardType) => {
 
 
 return (
     <div className="project-card">
-        <img className="project-img" src="" alt="" />
+        <img className="project-img" src={project.thumbnail} alt="" />
         <div className="project-card-text">
-            <h3>Project Title</h3>
-            <p className="skills-list">react, typescript, html, css</p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio temporibus deleniti deserunt, molestias aperiam porro, modi, neque obcaecati necessitatibus illum mollitia omnis? Dolorum beatae voluptatum dolores natus voluptatem ad deserunt.</p>
+            <h3>{project.title}</h3>
+            <p className="skills-list">{project.skills.map( skill =>{
+                return skill + ' '
+            })}</p>
+            <p>{project.details}</p>
             <div className="project-card-links">
                 <button className="btn btn-link">
-                    <a href="">Live Demo</a>
+                    <Link to={project.links[0]}>Live Demo</Link>
                 </button>
                 <button className="btn btn-link">
-                    <a href="">Github Repo</a>
+                    <a href={project.links[1]} target="_blank">Github Repo</a>
                 </button>
             </div>
         </div>

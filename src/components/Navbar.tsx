@@ -64,7 +64,7 @@ export const Navbar = ({ parallax }: NavbarProps) => {
     return (
         <>
         
-        <div id="navbar" className="flex-center">
+        <div id="navbar-main" className="flex-center">
 
             <div id="nav-items-container" className="flex-center">
                 <div id="nav-right">

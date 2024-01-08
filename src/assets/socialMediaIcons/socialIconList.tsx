@@ -1,37 +1,45 @@
+
+import githubIcon from './icons8-github-96.png'
+import tiktokIcon from './icons8-tiktok-100.png'
+import linkedinIcon from './icons8-linkedin.svg'
+import youtubeIcon from './icons8-youtube-100.png'
+
+
+
 const socialMediaIconList= [
     {
-        icon: '/src/assets/socialMediaIcons/icons8-github-96.png',
+        icon: githubIcon,
         text: 'Github',
         link: ''},
     {
-        icon: '/src/assets/socialMediaIcons/icons8-tiktok-100.png',
+        icon: tiktokIcon,
         text: 'TikTok',
         link: ''},
     {
-        icon: '/src/assets/socialMediaIcons/icons8-linkedin.svg',
+        icon: linkedinIcon,
         text: 'Linkedin',
         link: ''},
     {
-        icon: '/src/assets/socialMediaIcons/icons8-youtube-100.png',
+        icon: youtubeIcon,
         text: 'Youtube',
         link: ''},
    
 ]
 export const socialMediaNavList= [
-   {
-        icon: '/src/assets/socialMediaIcons/icons8-github-96.png',
+    {
+        icon: githubIcon,
         text: 'Github',
         link: ''},
     {
-        icon: '/src/assets/socialMediaIcons/icons8-tiktok-100.png',
+        icon: tiktokIcon,
         text: 'TikTok',
         link: ''},
     {
-        icon: '/src/assets/socialMediaIcons/icons8-linkedin.svg',
+        icon: linkedinIcon,
         text: 'Linkedin',
         link: ''},
     {
-        icon: '/src/assets/socialMediaIcons/icons8-youtube-100.png',
+        icon: youtubeIcon,
         text: 'Youtube',
         link: ''},
    

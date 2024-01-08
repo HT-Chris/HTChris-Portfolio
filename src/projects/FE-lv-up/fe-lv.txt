@@ -1,0 +1,106 @@
+
+ui/frontend css app
+
+
+resources
+
+    https://serenesforest.net/blazing-sword/characters/growth-rates/
+    https://fireemblem.fandom.com/wiki/List_of_characters_in_Fire_Emblem:_The_Blazing_Blade
+
+
+    art
+        https://fireemblemwiki.org/wiki/Category:The_Sacred_Stones_battle_sprites 
+        https://fireemblemwiki.org/wiki/Category:The_Sacred_Stones_battle_animations        
+
+
+
+ui
+
+    start page- display all playable characters in their sprite in a table, when clicked it will go to the character's detail page
+
+    detail page-mock the lv up/ promotion screen with sprite. have 3 buttons: lv up, promotion, and reset. have animation for the promotion. back btn in the corner
+
+
+assets
+    character sprites and portrait
+    lightning svgs
+
+
+pseudo code
+
+    need to extract character's base stats, growths, promotion 
+        have code get all growths and make an obj with name and stats as keys 
+            make sure stats dont go beyond caps
+
+    functions
+        use growths to randomly get up stats
+        promotion to add new class stats
+
+
+json demo
+
+    {
+        name: 'Lyn",
+        startLv: 1,
+        img:{
+            portrait: 'url',
+            sprite1: 'url',
+            sprite2: 'url',
+        },
+        base_stats:{
+                    hp: 20,
+                    atk: 3,
+                    atk: 3,
+                    atk: 3,
+                    atk: 3,
+            },
+        growths:{
+                    hp: 20
+                    atk: 30
+                    atk: 30
+                    atk: 30
+                    atk: 30
+            },
+        promoteStats:{
+              hp: 20,
+                    atk: 3,
+                    atk: 3,
+                    atk: 3,
+                    atk: 3,
+        }
+        prePromoteCaps:{
+              hp: 20,
+                    atk: 30,
+                    atk: 30,
+                    atk: 30,
+                    atk: 30,
+            },
+        promoteCaps:{
+              hp: 20,
+                    atk: 35,
+                    atk: 35,
+                    atk: 35,
+                    atk: 35,
+            },
+    }
+
+locales = [...document.querySelectorAll('table tbody tr')].map((row) =>{
+let [name,lv,startClass,hp,str,skl,spd,lck,def,res,mov,con,weapon,affin] = row.querySelectorAll('td') 
+return {
+    name: name.textContent.trim(), 
+        startClass: startClass.textContent.trim(),
+    hp:hp.textContent.trim(), 
+    str: str.textContent.trim(), 
+    skl: skl.textContent.trim(), 
+        spd: spd.textContent.trim(), 
+        lck:lck.textContent.trim(), 
+    def:def.textContent.trim(),
+    res :res.textContent.trim(), 
+    mov:mov.textContent.trim(), 
+    con: con.textContent.trim(), 
+    weapon:weapon.textContent.trim(),
+    affin:affin.textContent.trim()
+    } 
+    } 
+    )
+console.log(JSON.stringify(locales)) 
