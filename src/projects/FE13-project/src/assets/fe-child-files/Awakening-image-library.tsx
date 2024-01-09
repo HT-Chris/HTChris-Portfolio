@@ -1,3 +1,5 @@
+import ChromSprite from '../fe_child/character sprites/FE13_Chrom_Lord_Map_Sprite (1).webp'
+
 type ClassSpritesType={
 	[key:string]:string
 }
@@ -102,7 +104,7 @@ export const UnitImages: UnitImagesProps = {
 	Chrom:{
 		male:true,
 		portrait:'/src/assets/fe_child/portraits/Portrait_chrom_fe13.png',
-		sprite:'/src/assets/fe_child/character sprites/FE13_Chrom_Lord_Map_Sprite (1).webp',
+		sprite: ChromSprite,
 	},
 	Lissa:{
 		male:false,
