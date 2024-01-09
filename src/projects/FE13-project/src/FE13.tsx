@@ -9,7 +9,7 @@ import  logo  from './assets/fe_child/title/Fire_Emblem_Awakening_logo.webp'
 
 import './FE13App.css'
 
-function App() {
+export const FE13 = () => {
   
   const [showFather, setShowFather] = useState(true)
 
@@ -65,4 +65,3 @@ function App() {
   )
 }
 
-export default App

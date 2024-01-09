@@ -1,6 +1,6 @@
 
 import {FELVUP} from './projects/FE-lv-up/src/FELVUP'
-// import FE13 from './projects/FE13-project/src/App'
+import {FE13} from './projects/FE13-project/src/FE13'
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
@@ -22,7 +22,7 @@ function App() {
 
         {/* <Route path="/TigerPunk" element={<TigerPunk />} /> */}
         <Route path="/" element={<Homepage/>} />
-        {/* <Route path="/FE13" element={<FE13/>} /> */}
+        <Route path="/FE13" element={<FE13/>} />
         <Route path="/FELVUP/*" element={<FELVUP/>} />
 
       </Routes>
