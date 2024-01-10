@@ -1,0 +1,1043 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    --aureolin: hsla(55, 92%, 58%, 1);
+    --coral: hsla(18, 100%, 66%, 1);
+    --orange: rgb(255, 77, 0);
+    --jet: hsla(240, 1%, 23%, 1);
+    --jet-partial: hsla(240, 1%, 23%, 0.8);
+    --ash-gray: hsla(135, 7%, 64%, 1);
+    --platinum: hsla(174, 11%, 82%, 1);
+}
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Permanent Marker', cursive;
+}
+
+html {
+    font-size: 16px;
+}
+
+body .tiger-punk-app {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--jet);
+    font-family: 'Permanent Marker', cursive;
+}
+
+#root {
+    height: 100%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-sm {
+    width: 80px;
+    height: auto;
+    object-fit: cover;
+}
+
+.input {
+    background-color: var(--aureolin);
+    border-radius: 25px;
+    border: 5px solid var(--coral);
+    color: var(--jet);
+    padding: 8px;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.input-btn {
+    gap: 10px;
+    display: flex;
+    width: 300px;
+}
+
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Nav-bar */
+
+#nav-bar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0;
+    z-index: 20;
+    background-color: var(--jet-partial);
+    width: 100%;
+    padding: 10px 50px 10px 50px;
+    box-shadow: 1px 1px 10px 1px black;
+    font-size: 0.8rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 0.8rem;
+}
+
+#nav-bar li {
+    padding: 5px 10px 5px 10px;
+}
+
+li {
+    border: 2px solid transparent;
+    border-radius: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:visited {
+    color: inherit;
+}
+
+.selectedNav {
+    color: yellow;
+    background-color: var(--jet);
+    border: 2px solid var(--aureolin);
+}
+
+.selectedNav a {
+    border: none;
+}
+
+.btn {
+    background-color: var(--jet);
+    border-radius: 5px;
+    border: transparent;
+    max-height: 50px;
+    font-size: 1rem;
+    color: var(--platinum);
+    box-shadow: 5px 5px 10px black;
+    grid-row: 5;
+    grid-column: 2;
+    color: var(--aureolin);
+    max-width: 80px;
+    padding: 5px 10px 5px 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+
+/* Hero section */
+
+#hero-section {
+    padding-top: 80px;
+    height: 100vh;
+    display: grid;
+    min-width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    background-image: url('assets/Gallery/pexels-photo-3536236.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    text-shadow: 5px 5px 5px black;
+}
+
+#hero-section::before {
+    content: "";
+    position: absolute;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 0, 0.3);
+}
+
+#hero-section header {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#hero-text {
+    grid-column: 2;
+    grid-row: 3;
+    position: relative;
+    z-index: 1;
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(12, 100px);
+    grid-template-rows: repeat(5, 100px);
+}
+
+#hero-text h1 {
+    line-height: 5rem;
+    font-size: 4.5rem;
+    width: 75%;
+}
+
+.text-fast {
+    grid-column: 1;
+}
+
+.text-hard {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.text-loud {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.hero-text-p {
+    grid-row: 4;
+    grid-column: span 5;
+}
+
+.btn-home-tickets-hero {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: var(--jet);
+    color: var(--aureolin);
+    box-shadow: 5px 5px 5px black;
+}
+
+.home-tickets-link {
+    grid-row: 5;
+    grid-column: 1 / span 3;
+}
+
+#merch-section {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#merch-section h1 {
+    font-size: 5rem;
+    color: var(--orange);
+}
+
+#home-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.home-img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.btn-merch-slide {
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 1.5rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: var(--aureolin);
+    color: var(--jet);
+    box-shadow: 5px 5px 5px black;
+}
+
+
+/* Footer */
+
+#footer-main {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: auto 0.6rem;
+    width: 100%;
+    z-index: 3;
+    background-color: black;
+    color: var(--aureolin);
+    padding: 1rem;
+    font-size: 0.8rem;
+}
+
+#footer-logo,
+#footer-links,
+#footer-form,
+#footer-contact,
+#footer-social,
+#footer-legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#footer-logo {
+    grid-row: 1;
+    grid-column: 1;
+    justify-content: space-between;
+    align-items: start;
+}
+
+#footer-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#footer-links {
+    grid-row: 1;
+    grid-column: 6;
+}
+
+#footer-links ul {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    text-align: center;
+}
+
+#footer-form {}
+
+#footer-contact {
+    grid-row: 1;
+    grid-column: 2;
+    align-items: start;
+    justify-content: space-between;
+}
+
+#footer-social {
+    grid-row: 1;
+    grid-column: 7;
+    justify-content: space-between;
+}
+
+#footer-legal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    grid-row: 2;
+    grid-column: 1 /span 6;
+    font-size: 0.5rem;
+}
+
+#spotify-icon {
+    background-image: url('assets/SocialMediaIcons/icons8-spotify-480.png');
+}
+
+#tiktok-icon {
+    background-image: url('assets/SocialMediaIcons/tik-tok_4782345.png');
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+#instagram-icon {
+    background-image: url('assets/SocialMediaIcons/instagram.png');
+}
+
+#facebook-icon {
+    background-image: url('assets/SocialMediaIcons/facebook-icon.png');
+}
+
+#youtube-icon {
+    background-image: url('assets/SocialMediaIcons/youtube.png');
+}
+
+.social-icon {
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+/* Polaroid */
+
+.polaroid-card {
+    width: 250px;
+    height: 235px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 10px 10px 5px black;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.polaroid-card:hover {
+    z-index: 10;
+    cursor: pointer;
+}
+
+.home-gallery:hover {
+    height: 400px;
+    width: 375px;
+}
+
+.polaroid-img-container {
+    width: 100%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.polaroid-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-position: center;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.polaroid-img:hover {
+    height: 120%;
+}
+
+.polaroid-date {
+    margin-left: auto;
+    transform: translate(-13px, 4px);
+    font-size: 0.7rem;
+    color: var(--jet);
+}
+
+
+/* Gallery */
+
+#gallery-section {
+    margin-top: 50px;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--aureolin);
+}
+
+#gallery-home-container {
+    max-width: 1000px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#gallery-homepage {
+    width: 100%;
+    height: 50%;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+}
+
+
+/* Notebook Paper  */
+
+#tour-dates-home {
+    width: 100%;
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+.btn-home-tickets {
+    margin-top: 20px;
+    padding: 10px;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: var(--aureolin);
+    color: var(--jet);
+    box-shadow: 5px 5px 5px black;
+}
+
+.btn-home-tickets:hover {
+    cursor: pointer;
+}
+
+
+/* credit : https://www.codesdope.com/blog/article/getting-notebook-paper-effect-with-css/ */
+
+
+/* styling paper */
+
+#paper {
+    width: 600px;
+    height: 500px;
+    position: relative;
+    margin: 20px auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: white;
+    box-shadow: 0px 0px 5px 0px #888;
+    transform: rotate(9deg);
+}
+
+
+/* styling red vertical line */
+
+#paper::before {
+    content: '';
+    width: 2px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    background-color: rgba(255, 0, 0, 0.6);
+}
+
+
+/* styling blue horizontal lines */
+
+#pattern {
+    height: 100%;
+    background-image: repeating-linear-gradient(white 0px, white 24px, teal 25px);
+}
+
+
+/* styling text content */
+
+#content {
+    padding-top: 0.3rem;
+    padding-left: 56px;
+    padding-right: 16px;
+    line-height: 0.9rem;
+    font-family: 'Dancing Script', cursive;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    color: black;
+}
+
+#content h2 {
+    margin-bottom: 1rem;
+}
+
+#content ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.line-through {
+    text-decoration: line-through;
+    text-decoration-thickness: 0.1rem;
+}
+
+.sold-out {
+    position: absolute;
+    margin-left: 7rem;
+    color: red;
+    transform: rotate(-8deg);
+    border-radius: 10px 3px;
+    outline: 0.3rem solid red;
+    font-weight: 900;
+    font-size: 1rem;
+    text-shadow: 2px 2px 2px black;
+    width: 120px;
+    height: 20px;
+    display: grid;
+    place-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* Contacts page */
+
+#contacts-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./assets//Logo//bolt-305692_1280.png');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--aureolin);
+    width: 100%;
+    padding: 10rem;
+    color: var(--coral);
+    text-shadow: 10px 10px 5px black;
+    gap: 30px;
+}
+
+#contacts-page h1 {
+    color: var(--orange);
+    font-size: 5rem;
+}
+
+#contacts-booking {}
+
+#contacts-newsletter {}
+
+#contacts-info {
+    width: 300px;
+}
+
+.btn-contacts {
+    min-width: 150px;
+}
+
+#contacts-social {
+    display: flex;
+    width: 300px;
+    justify-content: space-between;
+    padding: 5px 25px 5px 25px;
+}
+
+
+/* Gallery Page */
+
+#gallery-page {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    color: var(--orange);
+    text-shadow: 10px 10px 5px black;
+    padding-top: 100px;
+    background: var(--aureolin);
+    background: repeating-linear-gradient( 90deg, var(--aureolin), var(--jet) 10px, var(--coral) 20px, var(--jet) 10px)
+}
+
+.polaroid-card {
+    width: 250px;
+    height: 235px;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 10px 10px 5px black;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.gallery-polaroid:hover {
+    transform: scale(1.8);
+}
+
+#gallery-page-container {
+    padding: 4rem;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    place-items: center;
+    gap: 2rem;
+}
+
+
+/* Merch Page */
+
+#merch-page {
+    width: 100%;
+    color: var(--jet);
+    padding: 100px 50px 50px 50px;
+    display: flex;
+    background-color: var(--ash-gray);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 5px 5px 5px violet;
+}
+
+#merch-page h1 {
+    font-size: 5rem;
+    color: var(--orange);
+}
+
+#merch-page-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    place-items: center;
+    gap: 20px;
+}
+
+.product-card {
+    background-color: var(--aureolin);
+    width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#product-page-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 100px;
+}
+
+#product-page-container h1 {
+    font-size: 3rem;
+    color: var(--orange);
+}
+
+.product-details-page {
+    height: 100%;
+    max-width: 800px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 100px;
+    display: grid;
+    place-items: center;
+    gap: 100px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.product-details-img-container {
+    width: 350px;
+    height: 350px;
+}
+
+.product-details-img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.product-name {
+    font-size: 3rem;
+    color: var(--jet);
+}
+
+.product-details-text {
+    min-width: 300px;
+    height: 350px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--platinum);
+    color: black;
+    text-shadow: 10px 10px 10px var(--jet);
+}
+
+.product-price {
+    font-size: 2rem;
+    color: var(--orange);
+}
+
+.btn-product {
+    border-radius: 5px;
+    min-width: 140px;
+}
+
+#cart-quantity {
+    z-index: 21;
+    right: 10.5%;
+    top: 20%;
+    position: absolute;
+    height: 18px;
+    place-items: center;
+    display: grid;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: transparent;
+    color: black;
+    background-color: var(--orange);
+}
+
+.cart-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.quantity-btns {
+    display: flex;
+    border-radius: 6px;
+}
+
+.item-quantity,
+.btn-down,
+.btn-up {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    aspect-ratio: 1/1;
+    background-color: var(--jet);
+    color: var(--aureolin);
+    border: 0px solid transparent;
+}
+
+.btn-up:hover,
+.btn-down:hover {
+    cursor: pointer;
+}
+
+.btn-up {
+    border-radius: 0 5px 5px 0;
+}
+
+.btn-down {
+    border-radius: 5px 0 0 5px;
+}
+
+
+/* Cart */
+
+#cart-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 100dvh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url('src/assets/Logo/paul-morley-paL4zSmXTWc-unsplash.jpg');
+}
+
+#cart-page h1 {
+    font-size: 5rem;
+    color: var(--orange);
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: var(--platinum);
+    color: var(--jet);
+    text-shadow: 5px 5px 5px var(--aureolin);
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.cart-img-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-input {
+    font-size: 1rem;
+    width: 50px;
+    border-radius: 5px;
+    height: 30px;
+    background-color: var(--jet);
+    border: 1px solid transparent;
+    color: var(--aureolin);
+    margin-right: 10px;
+    box-shadow: 5px 5px 5px var(--jet);
+}
+
+.btn-checkout {
+    padding: 10px;
+    width: auto;
+    height: auto;
+    font-size: 2rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: var(--jet);
+    color: var(--aureolin);
+    box-shadow: 5px 5px 5px black;
+}
+
+.checkout-message {
+    font-size: 1.2rem;
+    color: var(--jet);
+    text-shadow: 5px 5px 5px var(--aureolin);
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+    color: var(--orange);
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: var(--jet);
+}
+
+
+/* Tour Dates Page */
+
+#tour-dates-page {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px;
+    background-image: url('src/assets/Logo/animal-1296970_1920.png');
+    background-size: cover;
+    background-position: center;
+    text-shadow: 10px 10px 10px black;
+    color: var(--aureolin);
+    font-size: 1.8rem;
+}
+
+#tour-dates-page h1 {
+    font-size: 5rem;
+}
+
+#tour-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#tour-date-header {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    font-size: 2.5rem;
+    color: var(--orange);
+}
+
+#tour-header-date {
+    grid-column: 1;
+}
+
+#tour-header-city {
+    grid-column: 2;
+}
+
+#tour-header-venue {
+    grid-column: 3;
+}
+
+#tour-header-tickets {
+    grid-column: 4;
+}
+
+.tour-date-table {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr;
+    align-items: center;
+    gap: 5px;
+}
+
+.tour-page-date {
+    grid-column: 1;
+}
+
+.tour-page-city {
+    grid-column: 2;
+    color: var(--jet);
+}
+
+.tour-page-venue {
+    grid-column: 3;
+}
+
+.btn-ticket {
+    grid-row: 1;
+    grid-column: 4;
+    border-radius: 3px;
+    margin: 0;
+    font-size: 1.2rem;
+    padding: 10px;
+    min-width: 200px;
+    place-self: center;
+}
+
+.line {
+    background-color: black;
+    height: 5px;
+    width: 100%;
+    transform: translate(-3%, 1000%);
+}
+
+.line-transparent {
+    background-color: transparent;
+    width: 0;
+}
+
+.tour-page-sold {
+    color: red;
+    position: absolute;
+    font-size: 3rem;
+    left: 50%;
+    transform: rotate(6deg) translate(-50%, 0%);
+}
+
+.ticket-message {
+    z-index: 11;
+    font-size: 1.2rem;
+    color: var(--jet);
+    text-shadow: 5px 5px 5px var(--aureolin);
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+    color: var(--orange);
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: var(--jet);
+}
+
+
+/* Misc */
+
+.hide {
+    display: none;
+}

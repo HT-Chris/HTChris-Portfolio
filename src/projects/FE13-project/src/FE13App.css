@@ -65,10 +65,10 @@ body {
     box-sizing: border-box;
 }
 
-h5,
-h4,
-h3,
-p {
+.fe13-app h5,
+.fe13-app h4,
+.fe13-app h3,
+.fe13-app p {
     padding: 0;
     margin: 0;
 }
@@ -226,7 +226,7 @@ p {
     gap: 5px;
 }
 
-.btn {
+.fe13-app .btn {
     width: 90%;
     padding: 5px;
     font-size: 18px;

@@ -1,0 +1,19 @@
+export const GalleryFiles = [
+	'src/assets/Gallery/pexels-photo-3536236.jpeg',
+	'src/assets/Gallery/pexels-photo-3807093.jpeg',
+	'src/assets/Gallery/photo-1560985857-a66a2a5e2d27.avif',
+	'src/assets/Gallery/photo-1565035010268-a3816f98589a.avif',
+	'src/assets/Gallery/photo-1575672913784-11a7cd4f25f4.avif',
+	'src/assets/Gallery/photo-1596467289669-3a86bc54a360.avif',
+	'src/assets/Gallery/photo-1599275332750-94224515260c.avif',
+	'src/assets/Gallery/photo-1606687649774-2d0d1974b419.avif',
+	'src/assets/Gallery/photo-1638295415000-e692a6d44a6d.avif',
+	'src/assets/Gallery/photo-1620577610365-86c411bad78d.avif',
+	'src/assets/Gallery/photo-1619265337072-1ec414d17e72.avif',
+	'src/assets/Gallery/pexels-ben-collins-7647541.jpg',
+	'src/assets/Gallery/pexels-chris-s-15551890.jpg',
+	'src/assets/Gallery/pexels-cottonbro-studio-4866045.jpg',
+	'src/assets/Gallery/pexels-cottonbro-studio-5650946.jpg',
+	'src/assets/Gallery/pexels-cottonbro-studio-10177666.jpg',
+	'src/assets/Gallery/pexels-esra-korkmaz-18676946.jpg'
+]
