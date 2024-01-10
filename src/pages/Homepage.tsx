@@ -2,6 +2,7 @@
 import { Navbar } from '../components/Navbar'
 import { SkillsCard } from '../components/SkillsCard'
 import  codingIcons  from '../assets/coding icons/CodingIcons'
+import logo from '../assets/miscImg/HT Logo copy.png'
 import { useRef } from 'react';
 
 import backgroundClouds from '../assets/backgroundClouds/backgroundImages';
@@ -26,9 +27,23 @@ export const Homepage = () => {
          ref.current.scrollTo(3);
          }
        }
+
+       window.onload = function() {
+        setTimeout(function() {
+          const loadingScreen = document.getElementById('loading-screen');
+          if (loadingScreen) {
+          loadingScreen.style.display = 'none';
+         
+          }
+        }, 2000);
+      }
      
     return (
         <>
+
+        <div className="flex-center" id="loading-screen">
+          <img src={logo} alt="Loading..." className="loading-img" />
+        </div>
         
         
         <Navbar parallax={ref} className="navbar-fixed"/>

@@ -323,6 +323,54 @@
 }
 
 
+/* Loading Screen*/
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--oxford-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+    opacity: 1;
+    animation: load-opacity 2s forwards;
+}
+
+.loading-img {
+    max-width: 400px;
+    animation: fade-in-out 2s forwards;
+    opacity: 0;
+}
+
+@keyframes load-opacity {
+    70% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fade-in-out {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 0.25;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
 /* Skills */
 
 #skills-section {
