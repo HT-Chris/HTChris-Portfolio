@@ -534,6 +534,11 @@
     border-radius: 50%;
     aspect-ratio: 1/1;
     cursor: pointer;
+    color: white;
+}
+
+.contact-card:hover h5 {
+    color: white;
 }
 
 .contact-card:hover {
@@ -582,13 +587,6 @@
     opacity: 1;
     color: inherit;
 }
-
-.contact-icon {
-    height: 50px;
-    width: 50px;
-}
-
-.email-icon {}
 
 .contact-icon {
     height: 50px;

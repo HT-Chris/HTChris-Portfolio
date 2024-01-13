@@ -72,7 +72,8 @@ export const TigerPunkContextProvider = ({children} : TigerPunkProviderProps) =>
       }
 
       const updateItemQuantity=(itemID:number,n:number)=>{
-        setCurrentItemQuantity(n)
+        if(itemID){
+        setCurrentItemQuantity(n)}
       }
 
       const removeItem = (itemId: number) =>{

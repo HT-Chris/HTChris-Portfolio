@@ -28,7 +28,7 @@ export const Homepage = () => {
          }
        }
 
-       window.onload = function() {
+       document.addEventListener('DOMContentLoaded',function() {
         setTimeout(function() {
           const loadingScreen = document.getElementById('loading-screen');
           if (loadingScreen) {
@@ -36,7 +36,7 @@ export const Homepage = () => {
          
           }
         }, 2000);
-      }
+      })
      
     return (
         <>
