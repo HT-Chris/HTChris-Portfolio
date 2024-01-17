@@ -31,7 +31,7 @@ html {
     font-size: 16px;
 }
 
-body .tiger-punk-app {
+body #tiger-punk-app {
     margin: 0;
     display: flex;
     place-items: center;
@@ -45,7 +45,7 @@ body .tiger-punk-app {
     height: 100%;
 }
 
-main {
+main #tiger-punk-app {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,7 +85,7 @@ a:visited {
 
 /* Nav-bar */
 
-#nav-bar {
+#tiger-nav-bar {
     position: fixed;
     display: flex;
     justify-content: space-between;
@@ -109,7 +109,7 @@ ul {
     gap: 0.8rem;
 }
 
-#nav-bar li {
+#tiger-nav-bar li {
     padding: 5px 10px 5px 10px;
 }
 
@@ -159,7 +159,7 @@ a:visited {
 
 /* Hero section */
 
-#hero-section {
+#tiger-hero-section {
     padding-top: 80px;
     height: 100vh;
     display: grid;
@@ -174,7 +174,7 @@ a:visited {
     text-shadow: 5px 5px 5px black;
 }
 
-#hero-section::before {
+#tiger-hero-section::before {
     content: "";
     position: absolute;
     height: 100dvh;
@@ -185,7 +185,7 @@ a:visited {
     background-color: rgba(255, 255, 0, 0.3);
 }
 
-#hero-section header {
+#tiger-hero-section header {
     grid-column: 2;
     grid-row: 3;
 }

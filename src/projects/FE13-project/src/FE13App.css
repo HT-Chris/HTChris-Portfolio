@@ -48,7 +48,7 @@ body {
     background-image: url('./assets//fe_child//title//fea-characters-poster.jpg');
 }
 
-#root {
+#root .fe13-app {
     width: 100%;
     max-width: 1080px;
     display: grid;
@@ -87,6 +87,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-width: 1080px;
 }
 
 #body-right {
@@ -252,6 +253,7 @@ body {
     background-color: var(--dogwood-rose);
     border: transparent;
     border-radius: 5px;
+    padding: 5px;
 }
 
 

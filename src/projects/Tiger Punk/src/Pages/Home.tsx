@@ -32,9 +32,9 @@ export const Home = () => {
 		<NavBar/>
   
   
-	<main>
+	<main id='tiger-punk-app'>
   
-		<section id="hero-section" className="tiger-punk-app">
+		<section id="tiger-hero-section" >
 
 			<header>
 				<div id="hero-text">

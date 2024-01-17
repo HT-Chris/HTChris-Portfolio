@@ -16,7 +16,7 @@ export const FELVUP = () => {
     <Routes>
       <Route path='/' element={<CharacterSelect /> }/>
       <Route path='/unit/:id' element={<CharacterPage unit={initialUnitProps}/>}/>
-      {/* <CharacterPage val={test}/> */}
+    
     </Routes>
     </CharacterContextProvider>
     </>

@@ -7,6 +7,7 @@ import { Contacts } from './Pages/Contacts'
 import { Route, Routes} from 'react-router-dom'
 import { ProductDetails } from './Pages/ProductDetails'
 import { Cart } from './Pages/Cart'
+import './TigerApp.css'
 
 
 export const TigerPunkApp = () => {

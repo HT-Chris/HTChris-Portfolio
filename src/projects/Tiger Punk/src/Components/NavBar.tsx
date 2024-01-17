@@ -14,7 +14,7 @@ const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0)
 
 	return (
 			<>
-			<nav id="nav-bar">
+			<nav id="tiger-nav-bar" className='tiger-punk-app'>
         <img className='logo-sm' src={logo} alt="Tiger Punk Logo" />
         <ul>
           <li  className={`nav-item ${navItemSelected === 'Home' ? 'selectedNav ': ''}`}>
