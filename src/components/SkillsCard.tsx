@@ -94,7 +94,6 @@ export const SkillsCard = () => {
                         </div>
                     )
                 }
-                console.log(c)
             })}
         </div>
         

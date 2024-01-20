@@ -37,7 +37,7 @@ export const Home = () => {
 		<section id="tiger-hero-section" >
 
 			<header>
-				<div id="hero-text">
+				<div id="tiger-hero-text">
 					<h1 className="text-fast">Fast,</h1>
 					<h1 className="text-hard">Hard,</h1>
 					<h1 className="text-loud">Loud</h1>

@@ -1,10 +1,16 @@
+import hoodieImage from"./hoodie.png"
+import tshirtImage from "./tShirtBlack.png"
+import mugImage from "./mug.png"
+import hatImage from "./hat.png"
+
+
 export const products = [
 	{
 	id: 1,
 	name: "Hoodie",
 	description: "Comfortable and warm hoodie",
 	price: 49.99,
-	imageUrl: "/src/assets/Products/hoodie.png",
+	imageUrl: hoodieImage ,
 	category: "Clothing",
 	},
 	{
@@ -12,7 +18,7 @@ export const products = [
 	name: "T-Shirt",
 	description: "Soft and stylish t-shirt",
 	price: 19.99,
-	imageUrl: "/src/assets/Products/tShirtBlack.png",
+	imageUrl: tshirtImage,
 	category: "Clothing",
 	},
 	{
@@ -20,7 +26,7 @@ export const products = [
 	name: "Mug",
 	description: "Ceramic coffee mug",
 	price: 9.99,
-	imageUrl: "/src/assets/Products/mug.png",
+	imageUrl: mugImage,
 	category: "Accessories",
 	},
 	{
@@ -28,7 +34,7 @@ export const products = [
 	name: "Hat",
 	description: "Cool and comfortable hat",
 	price: 14.99,
-	imageUrl: "/src/assets/Products/hat.png",
+	imageUrl: hatImage,
 	category: "Accessories",
 	},
   ];

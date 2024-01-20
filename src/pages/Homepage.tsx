@@ -1,14 +1,14 @@
-
 import { Navbar } from '../components/Navbar'
 import { SkillsCard } from '../components/SkillsCard'
-import  codingIcons  from '../assets/coding icons/CodingIcons'
-import logo from '../assets/miscImg/HT Logo copy.png'
-import { useRef } from 'react';
-
-import backgroundClouds from '../assets/backgroundClouds/backgroundImages';
 import { ProjectCard } from '../components/ProjectCard';
 import { ContactCard } from '../components/ContactCard';
 import { ProjectList } from '../assets/ProjectList';
+import { useRef, useState, useEffect } from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+import logo from '../assets/miscImg/HT Logo copy.png'
+import  codingIcons  from '../assets/coding icons/CodingIcons'
+
 // import  socialMediaIconList  from './assets/socialMediaIcons/socialIconList';
 import artProfileImg from '../assets/miscImg/art profile img.png'
 import profileImg  from '../assets/miscImg/profile img.png'
@@ -16,11 +16,16 @@ import emailIcon from '../assets/socialMediaIcons/icons8-email-100.png'
 import socialMediaIconList from '../assets/socialMediaIcons/socialIconList';
 
 
+import backgroundClouds from '../assets/backgroundClouds/backgroundImages';
+
+
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 
 
 
 export const Homepage = () => {
+const [isLoading, setIsLoading] = useState(true)
+
   const ref = useRef<IParallax>(null);
     const goToContact = () => {
         if(ref.current){
@@ -28,20 +33,29 @@ export const Homepage = () => {
          }
        }
 
-       document.addEventListener('DOMContentLoaded',function() {
-        setTimeout(function() {
-          const loadingScreen = document.getElementById('loading-screen');
-          if (loadingScreen) {
-          loadingScreen.style.display = 'none';
+       useEffect(() => {
+          setTimeout(function() {
+              setIsLoading(false);
+          }, 2300)
+
+       }, [])
+
+       console.log(isLoading)
+
+      //  document.addEventListener('DOMContentLoaded',function() {
+      //   setTimeout(function() {
+      //     const loadingScreen = document.getElementById('loading-screen');
+      //     if (loadingScreen) {
+      //     loadingScreen.style.display = 'none';
          
-          }
-        }, 2000);
-      })
+      //     }
+      //   }, 2000);
+      // })
      
     return (
         <>
 
-        <div className="flex-center" id="loading-screen">
+        <div className={`loading-screen  ${isLoading ? 'flex-center ' : 'hide'}`}>
           <img src={logo} alt="Loading..." className="loading-img" />
         </div>
         
@@ -53,7 +67,7 @@ export const Homepage = () => {
           <section id='hero-section' className='flex-center column'>
             <ParallaxLayer speed={0.2} className='flex-center '>
               <div className="clouds-1">
-                <img src={backgroundClouds[0]} className='cover' alt="Clouds" />
+                <LazyLoadImage src={backgroundClouds[0]} className='cover' alt="Clouds" effect='blur'/>
               </div>
             </ParallaxLayer>
             <ParallaxLayer speed={.4} className='flex-center'>

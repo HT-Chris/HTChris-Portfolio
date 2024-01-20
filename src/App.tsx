@@ -16,7 +16,6 @@ function App() {
 
     <Routes>
 
-        {/* <Route path="/TigerPunk" element={<TigerPunk />} /> */}
         <Route path="/" element={<Homepage/>} />
         <Route path="/TigerPunk" element={<TigerPunkApp/>} />
         <Route path="/FE13" element={<FE13/>} />
