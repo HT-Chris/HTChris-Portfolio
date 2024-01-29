@@ -40,9 +40,15 @@ body {
     margin: 0;
     display: grid;
     place-items: center;
+    /* background-color: rgb(200, 200, 200); */
+    background-repeat: no-repeat;
+    background-position-y: 40%;
+    background-size: cover;
+    font-family: var(--font);
+    background-image: url('./assets//fe_child//title//fea-characters-poster.jpg');
 }
 
-#root .fe13-app {
+#root {
     width: 100%;
     max-width: 1080px;
     display: grid;
@@ -59,20 +65,15 @@ body {
     box-sizing: border-box;
 }
 
-.fe13-app h5,
-.fe13-app h4,
-.fe13-app h3,
-.fe13-app p {
+h5,
+h4,
+h3,
+p {
     padding: 0;
     margin: 0;
 }
 
 #body-container {
-    background-repeat: no-repeat;
-    background-position-y: 40%;
-    background-size: cover;
-    font-family: var(--font);
-    background-image: url('./assets//fe_child//title//fea-characters-poster.jpg');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,7 +87,6 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-width: 1080px;
 }
 
 #body-right {
@@ -226,7 +226,7 @@ body {
     gap: 5px;
 }
 
-.fe13-app .btn {
+.btn {
     width: 90%;
     padding: 5px;
     font-size: 18px;
@@ -252,7 +252,6 @@ body {
     background-color: var(--dogwood-rose);
     border: transparent;
     border-radius: 5px;
-    padding: 5px;
 }
 
 

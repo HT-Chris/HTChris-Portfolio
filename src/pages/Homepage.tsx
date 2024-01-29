@@ -85,10 +85,10 @@ const [isLoading, setIsLoading] = useState(true)
 
             <ParallaxLayer speed={0.6} className='flex-center '>
               <div id="hero-left" className=' flex-center column'>
-                  <div id='hero-header' className="container">
+                  <div id='hero-header' className="">
                     <header>Good Day!</header>
                   </div>
-                <div id='hero-text' className="container flex-center column">
+                <div id='hero-text' className=" flex-center column">
                   <h1>I'm HT Chris, Front-end Developer</h1>
                   <p>I build the Frontend of websites turning your ideas into code. Based in Seattle, WA.</p>
                 </div> 
@@ -150,7 +150,7 @@ const [isLoading, setIsLoading] = useState(true)
           </div>
         </ParallaxLayer>
 
-          <ParallaxLayer speed={0.5} className='flex-center ' offset={1.5}>
+          <ParallaxLayer speed={0.5} className='flex-center ' offset={1.8}>
             <div className="container">
               <header>Projects</header>
                 {ProjectList.map((p,i) =>{
@@ -181,7 +181,7 @@ const [isLoading, setIsLoading] = useState(true)
             </div>
           </ParallaxLayer>
           
-          <ParallaxLayer speed={0.8} className='flex-center ' offset={2} >
+          <ParallaxLayer speed={0.8} className='flex-center ' offset={2.5} >
               <div className="container flex-center">
                 <div id="about-left">
                 <header>About Me</header>
