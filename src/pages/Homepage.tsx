@@ -4,7 +4,7 @@ import { ProjectCard } from '../components/ProjectCard';
 import { ContactCard } from '../components/ContactCard';
 import { ProjectList } from '../assets/ProjectList';
 import { useRef, useState, useEffect } from 'react';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import logo from '../assets/miscImg/HT Logo copy.png'
 import  codingIcons  from '../assets/coding icons/CodingIcons'
@@ -25,6 +25,9 @@ import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 
 export const Homepage = () => {
 const [isLoading, setIsLoading] = useState(true)
+const [isCarousel, setIsCarousel] = useState(true)
+const [carouselItem, setCarouselItem] = useState(0)
+const [mobileMode, setMobileMode] = useState(false)
 
   const ref = useRef<IParallax>(null);
     const goToContact = () => {
@@ -37,10 +40,43 @@ const [isLoading, setIsLoading] = useState(true)
           setTimeout(function() {
               setIsLoading(false);
           }, 2300)
-
+          carouselCheck()
+          mobileCheck()
        }, [])
 
-       console.log(isLoading)
+  const carouselCheck = () => {
+    if(window.innerWidth < 1440){
+      setIsCarousel(true)
+    }else{
+      setIsCarousel(false)
+    }
+  }    
+
+  const mobileCheck = () => {
+    if(window.innerWidth < 768){
+      setMobileMode(true)
+      console.log('mobile')
+    }else{
+      setMobileMode(false)
+    }
+  }
+
+  const carouselList = (direction:string) => {
+
+    if(direction === 'left'){
+      if(carouselItem !== 0){
+        setCarouselItem(prev=> prev-1)
+      }else{
+        setCarouselItem(ProjectList.length-1) 
+      }
+    } else{
+      if(carouselItem !== ProjectList.length-1){
+        setCarouselItem(prev=> prev+1)
+      }else{
+        setCarouselItem(0)
+      }
+    }
+  }
 
       //  document.addEventListener('DOMContentLoaded',function() {
       //   setTimeout(function() {
@@ -67,34 +103,35 @@ const [isLoading, setIsLoading] = useState(true)
           <section id='hero-section' className='flex-center column'>
             <ParallaxLayer speed={0.2} className='flex-center '>
               <div className="clouds-1">
-                <LazyLoadImage src={backgroundClouds[0]} className='cover' alt="Clouds" effect='blur'/>
+                <img src={backgroundClouds[0]} className='cover' alt="Clouds" />
               </div>
             </ParallaxLayer>
             <ParallaxLayer speed={.4} className='flex-center'>
               <div className="clouds-2">
                 <img src={backgroundClouds[3]}  className='cover darker img-left rotate-1 '  alt="Clouds" />
-                <img src={backgroundClouds[1]}  className='cover darker img-left rotate-2 '  alt="Clouds" />
+                <img src={backgroundClouds[2]}  className='cover darker img-left rotate-2 '  alt="Clouds" />
               </div>
             </ParallaxLayer>
             <ParallaxLayer speed={1} className='flex-center'>
               <div className="clouds-2 lower">
-                <img src={backgroundClouds[2]}  className='cover rotate flipped-img img-right brighter'  alt="Clouds" />
-                <img src={backgroundClouds[2]}  className='cover rotate flipped-img rotate-1 img-right brighter'  alt="Clouds" />
+                <img src={backgroundClouds[2]}  className='cover rotate flipped-img img-right brighter cloud-mobile'  alt="Clouds" />
+                <img src={backgroundClouds[2]}  className='cover rotate flipped-img rotate-1 img-right brighter cloud-mobile'  alt="Clouds" />
               </div>
             </ParallaxLayer>
 
             <ParallaxLayer speed={0.6} className='flex-center '>
               <div id="hero-left" className=' flex-center column'>
-                  <div id='hero-header' className="">
+                  <div id='hero-header' className="container">
                     <header>Good Day!</header>
                   </div>
-                <div id='hero-text' className=" flex-center column">
+                <div id='hero-text' className="container flex-center column">
                   <h1>I'm HT Chris, Front-end Developer</h1>
                   <p>I build the Frontend of websites turning your ideas into code. Based in Seattle, WA.</p>
+                <button onClick={()=>goToContact()} className="btn btn-contact">Get in touch!</button>
                 </div> 
-              <button onClick={()=>goToContact()} className="btn btn-contact">Get in touch!</button>
               </div>
-              <div id="hero-image">
+              
+              <div id="hero-image" className={`${mobileMode ? 'hide' : ''}`}>
                 <img className='profile-img flipped-img' src={profileImg} alt="Profile Image" />
               </div>
 
@@ -150,14 +187,36 @@ const [isLoading, setIsLoading] = useState(true)
           </div>
         </ParallaxLayer>
 
-          <ParallaxLayer speed={0.5} className='flex-center ' offset={1.8}>
+          <ParallaxLayer speed={0.5} className='flex-center ' offset={1.5}>
             <div className="container">
               <header>Projects</header>
+              <div id="projects-container" className={` ${isCarousel ? 'hide' : ''}`}>
                 {ProjectList.map((p,i) =>{
                 return <ProjectCard key={i} project={p}/>
-
                 })}
-              <div id="projects-container">
+              </div>
+              <div id="projects-container" className={` ${isCarousel ? '' : 'hide'}`}>
+                <div className="carousel  flex-center">
+                  <button className={`btn-carousel flex-center ${mobileMode ? 'hide' : ''}`} onClick={()=>carouselList('left')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+                  <ProjectCard key={carouselItem} project={ProjectList[carouselItem]}/>
+                  <button className={`btn-carousel flex-center ${mobileMode ? 'hide' : ''}`} onClick={()=>carouselList('right')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
+                  <div id="mobile-btn" className={`flex-center ${mobileMode ? '' : 'hide'}`}>
+                  <button className='btn-carousel flex-center' onClick={()=>carouselList('left')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                    </svg>
+                  </button>
+                  <button className='btn-carousel flex-center' onClick={()=>carouselList('right')}><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                    </svg>
+                  </button>
+                  </div>
+                </div>
               </div>
             </div>
           </ParallaxLayer>
@@ -182,7 +241,7 @@ const [isLoading, setIsLoading] = useState(true)
           </ParallaxLayer>
           
           <ParallaxLayer speed={0.8} className='flex-center ' offset={2.5} >
-              <div className="container flex-center">
+              <div className="container flex-center about-container">
                 <div id="about-left">
                 <header>About Me</header>
                   <p>While I'm not coding I enjoy hiking, video games, cooking, and art! One of the reason I fell in love with frontend dev is the

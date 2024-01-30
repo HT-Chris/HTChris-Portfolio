@@ -1,5 +1,5 @@
 import { IParallax } from '@react-spring/parallax';
-import { RefObject } from 'react';
+import { RefObject, useState, useEffect  } from 'react';
 // import   socialMediaNavList  from '../assets/socialMediaIcons/socialIconList'
 import logo from '../assets/miscImg/HT Logo copy.png'
 import githubIcon from '/src/assets/socialMediaIcons/icons8-github-96.png'
@@ -27,7 +27,7 @@ const socialMediaNavList= [
             link: ''},
        
       ]
-      
+
 
 type pScroll = {
     scrollTo: (page: number) => void | null
@@ -35,10 +35,35 @@ type pScroll = {
 
   type NavbarProps = {
     parallax: RefObject<IParallax>;
+
     className:string;
   };
 
 export const Navbar = ({ parallax }: NavbarProps) => {
+    
+const [menuIsOpen, setMenuIsOpen] = useState(false)
+
+
+const openMenu = () => {
+    setMenuIsOpen(!menuIsOpen)
+    
+}
+
+const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+// Update the isMobile state when the window is resized
+useEffect(() => {
+  const handleResize = () => {
+    setIsMobile(window.innerWidth <= 600);
+  };
+
+  window.addEventListener('resize', handleResize);
+
+  // Clean up the event listener when the component is unmounted
+  return () => {
+    window.removeEventListener('resize', handleResize);
+  };
+}, []);
 
     // const scrollToSection = (sectionId: string) => {
     //     const targetSection = document.querySelector(sectionId);
@@ -72,29 +97,64 @@ export const Navbar = ({ parallax }: NavbarProps) => {
                     <h3>HT Chris</h3>
                 </div>
               
-                <ul>
+                <ul className={`${isMobile ? 'hide' :''}`}>
                     <li>
                         <a   onClick={() => handleScrollTo(0)}>Home</a>
                     </li>
                     <li>
-                        <a   onClick={() => handleScrollTo(.99)}>Skills</a>
+                        <a   onClick={() => handleScrollTo(.65)}>Skills</a>
                     </li>
                     <li>
-                        <a   onClick={() => handleScrollTo(1.5)}>Projects</a>
+                        <a   onClick={() => handleScrollTo(1.35)}>Projects</a>
                     </li>
                     <li>
-                        <a onClick={() => handleScrollTo(2)}>About Me</a>
+                        <a onClick={() => handleScrollTo(2.3)}>About Me</a>
                     </li>
                     <li>
-                        <a  onClick={() => handleScrollTo(2.5)} >Contact</a>
+                        <a  onClick={() => handleScrollTo(3)} >Contact</a>
                     </li>
                 </ul>
-            <div className="social-media-container">
+            <div className={`social-media-container ${isMobile ? 'hide' :''}`}>
                 {socialMediaNavList.map((media, index) => (
                     <a key={index} href={media.link} className={`social-media-links ${media.text === 'Github' ? 'icon-padding' : ''} ${media.text === 'TikTok' ? 'icon-padding-2' : ''}`}>
                     <img className='nav-icon-links' src={media.icon} alt={media.text} />
                     </a>
                 ))}
+            </div>
+            <div className={`mobile-menu ${isMobile ? '' :' hide'}`}>
+                <button className='btn-hamburger ' onClick={()=>openMenu()}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                </button>
+
+                <div id='popup-menu' className={` ${menuIsOpen? '' :'hide'}`}>
+                    <button className='btn-close' onClick={()=>openMenu()}>&times;</button>
+                <ul className='popup-ul flex-center column'>
+                    <li>
+                        <a   onClick={() => handleScrollTo(0)}>Home</a>
+                    </li>
+                    <li>
+                        <a   onClick={() => handleScrollTo(.65)}>Skills</a>
+                    </li>
+                    <li>
+                        <a   onClick={() => handleScrollTo(1.35)}>Projects</a>
+                    </li>
+                    <li>
+                        <a onClick={() => handleScrollTo(2.3)}>About Me</a>
+                    </li>
+                    <li>
+                        <a  onClick={() => handleScrollTo(3)} >Contact</a>
+                    </li>
+                </ul>
+                <div className='social-media-container flex-center column'>
+                {socialMediaNavList.map((media, index) => (
+                    <a key={index} href={media.link} className={`social-media-links ${media.text === 'Github' ? 'icon-padding' : ''} ${media.text === 'TikTok' ? 'icon-padding-2' : ''}`}>
+                    <img className='nav-icon-links' src={media.icon} alt={media.text} />
+                    </a>
+                ))}
+            </div>
+                </div>
             </div>
         </div>
         </div>

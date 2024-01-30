@@ -225,17 +225,16 @@
 #nav-items-container {
     width: 100%;
     max-width: 1000px;
-    gap: 1rem;
+    gap: 2rem;
     position: relative;
     justify-content: space-between;
 }
 
 #nav-items-container ul {
     z-index: 10;
-    min-width: 400px;
     justify-content: space-between;
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     list-style-type: none;
     color: white;
 }
@@ -269,6 +268,48 @@
     cursor: pointer;
 }
 
+#root-main .btn-hamburger {
+    content: '';
+    background-color: inherit;
+    border: 1px solid transparent;
+    width: 35px;
+    right: 0;
+}
+
+.btn-hamburger:hover {
+    cursor: pointer;
+}
+
+#popup-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3px;
+    gap: 50px;
+    position: fixed;
+    width: 50%;
+    height: 100DVH;
+    background-color: var(--cornflower-blue);
+    right: 0;
+    top: 0;
+}
+
+.popup-ul {
+    flex-direction: column;
+    width: 100%;
+    font-size: 22px;
+}
+
+.btn-close {
+    justify-self: flex-end;
+    font-size: 40px;
+    width: 70px;
+    background-color: inherit;
+    border: 1px solid transparent;
+    color: white;
+    align-self: flex-end;
+}
+
 
 /* Hero */
 
@@ -276,19 +317,16 @@
     background: linear-gradient( var(--honolulu-blue), var(--light-cyan));
     padding-top: 100px;
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
 }
 
 #hero-left {
     margin-right: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    gap: 6rem;
 }
 
-#hero-header {}
+#hero-header {
+    transform: translateY(-10rem);
+}
 
 #hero-header header {
     font-size: 8rem;
@@ -318,6 +356,7 @@
     padding: 1rem;
     font-size: 1.5rem;
     align-self: flex-end;
+    margin-right: 5rem;
     color: white;
     text-shadow: 2px 2px 5px black;
     cursor: pointer;
@@ -382,7 +421,6 @@
 }
 
 #skills-section .container {
-    min-width: 600px;
     justify-content: space-between;
     padding: 2rem;
     /* font-family: 'Cedarville Cursive', cursive; */
@@ -433,6 +471,10 @@
     color: white;
 }
 
+.about-container {
+    width: 60%;
+}
+
 #about-left {
     text-align: left;
     display: flex;
@@ -457,7 +499,7 @@
     border-radius: 10px;
     padding: 1rem;
     font-size: 1.6rem;
-    margin-bottom: 2rem;
+    margin: 2rem;
 }
 
 .project-img {
@@ -477,6 +519,8 @@
     flex-direction: column;
     padding: 1rem;
     text-align: left;
+    gap: 16px;
+    line-height: 20px;
 }
 
 .project-card-text h3 {}
@@ -502,12 +546,27 @@
     padding: 0;
     font-size: 1rem;
     color: black;
-    height: 3rem;
-    width: 10rem;
+    height: 30px;
+    width: 100px;
 }
 
 .btn-link:hover {
     background-color: var(--bright-pink-crayola);
+    color: white;
+    transition: all 0.5s ease-in-out;
+}
+
+.btn-carousel {
+    width: 50px;
+    padding: 15px;
+    border-radius: 50%;
+    border: 3px solid var(--cornflower-blue);
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.btn-carousel:hover {
+    background-color: var(--cornflower-blue);
     color: white;
     transition: all 0.5s ease-in-out;
 }
@@ -604,7 +663,7 @@
 
 .email-icon {}
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (max-width: 1440px) {
     html {
         font-size: 10px;
     }
@@ -615,17 +674,92 @@
         max-width: 90%;
         margin-bottom: -9rem;
     }
+    #navbar-main {
+        font-size: 16px;
+    }
     #root-main .profile-img {}
-    /* .project-card {
+    .project-card {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0 2rem 2rem 2rem;
     }
     .project-card-text {
         max-width: 350px;
         align-items: center;
         justify-content: center;
-    } */
+    }
+    .about-container {
+        flex-direction: column-reverse;
+    }
+    #about-left {
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 8px;
+    }
+    #nav-item-container {
+        display: flex;
+        width: 100%;
+    }
+    #root-main .nav-icon-links {
+        height: 50px;
+        width: 50px;
+    }
+    #root-main .social-media-container {
+        gap: 25px;
+    }
+    #root-main .icon-padding {
+        padding: 0;
+    }
+    #root-main .icon-padding-2 {
+        padding: 0;
+    }
+    #hero-section {
+        flex-direction: row;
+    }
+    #root-main .cloud-mobile {
+        transform: translate(0, 0);
+    }
+    .about-container {
+        min-width: 80%;
+    }
+    .btn-carousel {
+        width: 75px;
+    }
+    .carousel {
+        flex-direction: column;
+    }
+    #mobile-btn {
+        gap: 75px;
+    }
+    #skills-section .container {
+        min-width: none;
+    }
+    #skills-bottom {
+        width: 80%;
+    }
+    #skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .icon-card-img {
+        height: 50px;
+        width: 50px;
+    }
+    #root-main #skills-section p {
+        font-size: 1.5rem;
+    }
+    .project-img {
+        width: 200px;
+        height: 150px;
+    }
+}
+
+#root-main .hide {
+    display: none;
 }
