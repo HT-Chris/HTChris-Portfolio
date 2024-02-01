@@ -14,7 +14,7 @@ export const ProjectList = [
         title:'Fire Emblem Awakening Child Pairings App',
         skills:['HTML', 'CSS', 'React','Typescript'],
         details:" This is my first personal app that I completed. This CRUD app that helps pairing parent units in the video game Fire Emblem Awakening.  You can add pair of parent units to a list and it will show each unit's available classes and what skills those classes provide.  ",
-        links:['./projects/FE13-project/src/App.tsx', 'https://github.com/Pthalo000f89/Fire-Emblem-Projects'],
+        links:['/FE13', 'https://github.com/Pthalo000f89/Fire-Emblem-Projects'],
     },
    {
         thumbnail:'',
