@@ -24,7 +24,7 @@ export const FE13 = () => {
     <>
     <PairingContextProvider>
  
-    <div id="body-container" className='fe13-app'>
+    <div id="body-container-fe13" className='fe13-app'>
     <img src={logo} id='logo-mobile' alt="Fire Emblem Awakening Logo" />
       <div id="body-left">
         <SelectParent/>

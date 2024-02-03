@@ -4,7 +4,7 @@ import {FE13} from './FE13'
 import './index.css'
 
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById('root-fe13')!).render(
 
   <React.StrictMode>
     <FE13 />
