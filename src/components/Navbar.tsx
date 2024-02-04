@@ -1,5 +1,5 @@
 import { IParallax } from '@react-spring/parallax';
-import { RefObject, useState, useEffect  } from 'react';
+import { RefObject, useState, useEffect, useRef  } from 'react';
 // import   socialMediaNavList  from '../assets/socialMediaIcons/socialIconList'
 import logo from '../assets/miscImg/HT Logo copy.png'
 import githubIcon from '/src/assets/socialMediaIcons/icons8-github-96.png'
@@ -42,7 +42,7 @@ type pScroll = {
 export const Navbar = ({ parallax }: NavbarProps) => {
     
 const [menuIsOpen, setMenuIsOpen] = useState(false)
-
+const menuRef = useRef<HTMLDivElement>(null)
 
 const openMenu = () => {
     setMenuIsOpen(!menuIsOpen)
@@ -65,6 +65,19 @@ useEffect(() => {
   };
 }, []);
 
+useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) =>{
+        if (menuRef.current && event.target instanceof Node && !menuRef.current.contains(event.target)) {
+            setMenuIsOpen(false)
+        }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+
+    return () => {
+        document.removeEventListener('mousedown', handleClickOutside)
+    }
+},[])
+
     // const scrollToSection = (sectionId: string) => {
     //     const targetSection = document.querySelector(sectionId);
     
@@ -74,6 +87,7 @@ useEffect(() => {
     //   };
 
       const handleScrollTo = (page:number) => {
+        setMenuIsOpen(false)
         const pScrolll= parallax.current as unknown as pScroll
         if(pScrolll){
         pScrolll.scrollTo(page);}
@@ -89,7 +103,7 @@ useEffect(() => {
     return (
         <>
         
-        <div id="navbar-main" className="flex-center">
+        <div id="navbar-main" ref={menuRef} className="flex-center">
 
             <div id="nav-items-container" className="flex-center">
                 <div id="nav-right">

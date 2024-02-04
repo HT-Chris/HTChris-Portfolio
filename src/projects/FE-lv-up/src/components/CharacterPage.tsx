@@ -23,7 +23,9 @@ export const CharacterPage :FC<UnitProps>  =()=> {
     const handleButtonClick = () => {
       setIsButtonDisabled(true);
       lvUpMulti(lvValue)
+      
       setTimeout(() => {
+        setLvValue(1)
         setIsButtonDisabled(false);
       }, 500);
     };
