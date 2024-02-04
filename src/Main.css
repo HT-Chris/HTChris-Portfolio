@@ -316,19 +316,17 @@
 #hero-section {
     background: linear-gradient( var(--honolulu-blue), var(--light-cyan));
     padding-top: 100px;
-    display: flex;
 }
 
 #hero-left {
     margin-right: 2rem;
-    gap: 6rem;
+    gap: 3rem;
+    height: 400px;
 }
+
+#hero-header {}
 
 #hero-header {
-    transform: translateY(-10rem);
-}
-
-#hero-header header {
     font-size: 8rem;
     color: white;
     text-shadow: 2px 2px 5px black;
@@ -341,7 +339,6 @@
     text-shadow: 2px 2px 5px black;
     max-width: 500px;
     font-size: 1.2rem;
-    gap: 1rem;
     background-color: rgba(255, 255, 255, 0.5);
     padding: 20px;
     border-radius: 10px;
@@ -363,8 +360,6 @@
 }
 
 #hero-image {
-    width: 20rem;
-    object-fit: contain;
     border-radius: 10px;
 }
 
@@ -672,7 +667,6 @@
     }
     #root-main .container {
         max-width: 90%;
-        margin-bottom: -9rem;
     }
     #navbar-main {
         font-size: 16px;

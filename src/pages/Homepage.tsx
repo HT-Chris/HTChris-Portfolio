@@ -121,9 +121,9 @@ const [mobileMode, setMobileMode] = useState(false)
 
             <ParallaxLayer speed={0.6} className='flex-center '>
               <div id="hero-left" className=' flex-center column'>
-                  <div id='hero-header' className="container">
-                    <header>Good Day!</header>
-                  </div>
+                 
+                    <header id='hero-header' className="container">Good Day!</header>
+             
                 <div id='hero-text' className="container flex-center column">
                   <h1>I'm HT Chris, Front-end Developer</h1>
                   <p>I build the Frontend of websites turning your ideas into code. Based in Seattle, WA.</p>
