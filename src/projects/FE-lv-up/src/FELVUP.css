@@ -35,6 +35,10 @@ body .stats-page-container {
     height: 100%;
 }
 
+#root-main button:hover {
+    cursor: pointer;
+}
+
 .character-select h4,
 .stats-page-container h4 {
     margin: -5px 0 -5px 0;
@@ -739,12 +743,14 @@ body .stats-page-container {
         text-align: center;
     }
     .stats-page-card {
-        min-width: 100%;
+        min-width: 0px;
+        width: 100%;
         height: 100%;
         gap: 1rem;
     }
-    .card-div {
+    .stats-page-container .card-div {
         width: 100%;
+        padding-bottom: 10px;
     }
     #card-top {
         flex-direction: column-reverse;
@@ -769,7 +775,7 @@ body .stats-page-container {
     #card-bottom {
         width: 100%;
         flex-direction: column;
-        gap: 2.25rem;
+        /* gap: 2.25rem; */
     }
     .btn {
         font-size: 22px;
@@ -790,9 +796,11 @@ body .stats-page-container {
     }
     .stat-bar {
         width: 8rem;
+        transform: translateY(15px);
     }
     .stat-bar-progress {
         width: 8rem;
+        transform: translateY(15px);
     }
     .growths {
         height: auto;
@@ -813,6 +821,28 @@ body .stats-page-container {
     }
     .lv-up-text {
         font-size: 60px;
+    }
+    #btns {
+        width: 100%;
+    }
+    #top-btns .btn {
+        font-size: 26px;
+        padding: 2rem 0 2rem 0;
+    }
+    .promotion-container {
+        width: 90%;
+    }
+    #root-main .promotion-container p {
+        font-size: 18px;
+    }
+    .promo-btn img {
+        width: 50%;
+        padding: 5px;
+    }
+    .back-btn {
+        padding: 15px;
+        font-size: 22px;
+        margin-top: 10px;
     }
 }
 

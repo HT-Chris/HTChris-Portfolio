@@ -682,6 +682,7 @@
         max-width: 350px;
         align-items: center;
         justify-content: center;
+        text-align: center;
     }
     .about-container {
         flex-direction: column-reverse;
@@ -690,6 +691,12 @@
         text-align: center;
         display: flex;
         align-items: center;
+    }
+    .btn-link {
+        padding: 5px;
+        width: auto;
+        height: auto;
+        font-size: 18px;
     }
 }
 
@@ -751,6 +758,12 @@
     .project-img {
         width: 200px;
         height: 150px;
+    }
+    .btn-link {
+        padding: auto;
+        width: auto;
+        height: auto;
+        font-size: 18px;
     }
 }
 

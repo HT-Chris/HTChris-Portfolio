@@ -28,7 +28,7 @@ const isSelected = keyIndex == selectedPairing
 				))}
 			</span>
 				
-			<button className='btn-red' onClick={() =>removeFromList(keyIndex)}>X</button>
+			<button className='btn-red' onClick={() =>removeFromList(keyIndex)}>&#215;</button>
 		</div>
 		</>
 	)
