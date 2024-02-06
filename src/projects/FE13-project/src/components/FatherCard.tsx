@@ -8,9 +8,23 @@ export const  FatherCard = () => {
   const [onClassTab, setOnClassTab] = useState(true)
   const {fatherData} = useContext(PairingContext)
 
+  const [selectedValue, setSelectedValue] = useState('');
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
   const absentFather = fatherData.name === ''
   const avatarParent = fatherData.name === 'AvatarM'
   const classyParent = fatherData.name === 'AvatarM' && onClassTab
+
+
+/**
+ * make drop down for skills, and use state
+ * remake it all for avatar
+ * when selecting a new unit have the state reset
+ * make buttons to change between classes and skills
+ */
 
 
   useEffect(() => {
@@ -59,6 +73,23 @@ export const  FatherCard = () => {
 
             <div className="icons-container">
 
+
+
+            <select name="" id="" onChange={handleChange}>
+            {fatherData.classes.map((c, index) => {
+    const t = c;
+    c = ClassSprites[c.replace(/ /g, '') + '_' + fatherData.sex];
+    return (
+      <option key={index} value={t} style={{ backgroundImage: `url(${c})` }}>
+        {t}
+      </option>
+              )
+    })}
+            </select>
+    <img src={ClassSprites[selectedValue.replace(/ /g, '') + '_' + fatherData.sex] } alt="" />
+
+{/* 
+
               {fatherData.classes.map((c, index) => {
                 const t = c
                 c = ClassSprites[c.replace(/ /g, '') + '_' + fatherData.sex] 
@@ -69,7 +100,7 @@ export const  FatherCard = () => {
                     <p>{t}</p>
                   </div>
                 </div>)
-              })}
+              })} */}
             </div>
           </div>
 
