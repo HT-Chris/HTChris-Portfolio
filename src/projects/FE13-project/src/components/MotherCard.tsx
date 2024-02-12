@@ -8,6 +8,34 @@ export const  MotherCard = () => {
   const [onClassTab, setOnClassTab] = useState(true)
   const {motherData} = useContext(PairingContext)
 
+  const [selectedClass, setSelectedClass] = useState('');
+  const [selectedSkill, setSelectedSkill] = useState('');
+  const [isMobile, setIsMobile] = useState(false)
+
+
+  const classChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedClass(event.target.value);
+  }
+  
+    const skillChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setSelectedSkill(event.target.value);
+    }
+
+    
+  useEffect(()=>{
+    if(window.innerWidth <= 768){
+      setIsMobile(true)
+    }
+
+  }, [])
+
+  useEffect(() =>{
+    setSelectedClass('')
+    setSelectedSkill('')
+  }, [motherData])
+
+
+
   const absentMother = motherData.name === ''
   const avatarParent = motherData.name === 'AvatarF'
   const classyParent = motherData.name === 'AvatarF' && onClassTab
@@ -50,7 +78,7 @@ export const  MotherCard = () => {
 
             <div className="unit-card-right">
                 
-                <div className={`btn-tabs ${avatarParent ? '' : 'hide'}`}>
+                <div className={`btn-tabs ${avatarParent && !isMobile ? '' : 'hide'}`}>
                 <button className={`tab ${onClassTab ? '' : 'tab-bottom-border'}`} onClick={()=>tabSelect('classes')}>Classes</button>
                 <button className={`tab ${onClassTab ? 'tab-bottom-border' : ''}`} onClick={()=>tabSelect('skills')}>Skills</button>
                 </div>
@@ -60,11 +88,26 @@ export const  MotherCard = () => {
 
                 <div className="icons-container">
 
+                <select name="" id="" 
+                    className={`${isMobile ? '' : 'hide'}`} onChange={classChange}>
+                      {motherData.classes.map((c, index) => {
+              const t = c;
+              c = ClassSprites[c.replace(/ /g, '') + '_' + motherData.sex];
+              return (
+                <option key={index} value={t} >
+                  {t}
+                </option>
+                        )
+              })}
+                      </select>
+              {selectedClass !== '' && <img src={ClassSprites[selectedClass.replace(/ /g, '') + '_' + motherData.sex] } alt="" />}
+
+
                   {motherData.classes.map((c, index) => {
                     const t = c
                     c = ClassSprites[c.replace(/ /g, '') + '_' + motherData.sex]
                     return(
-                      <div className="sprite-container" key={index}>
+                      <div className={`sprite-container ${isMobile ? 'hide' : ''}`} key={index}>
                         <img className="sprite-img" src={c} alt="class" />
                         <div className="details">
                           <p>{t}</p>
@@ -78,13 +121,28 @@ export const  MotherCard = () => {
               <h3 className={`${avatarParent ? 'hide' : ''}`}>Skills</h3>
                 <div className="icons-container">
 
+                  
+              <select name="" id="" 
+              className={`${isMobile ? '' : 'hide'}`} onChange={skillChange}>
+                {motherData.skills.map((s, index) => {
+                  const t = s;
+                  s = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.icon
+                  return (
+                    <option key={index} value={t} >
+                      {t}
+                    </option>
+                            )
+                  })}
+                          </select>
+              {selectedSkill !== '' && <img src={SkillIcons[selectedSkill.replace('+','Plus').replace(/ /g,'')]?.icon} alt="" />}
+
               {motherData.skills.map((s, index) => {
                   const t = s
                   const e = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.effect
                   s = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.icon
                     if(s == undefined) return
                       return(
-                      <div className="sprite-container" key={index}>
+                      <div className={`sprite-container ${isMobile ? 'hide' : ''}`} key={index}>
                         <img className="sprite-img"  src={s} alt="skill" />
                         <div className="details">
                           <p>{t}</p>{e}

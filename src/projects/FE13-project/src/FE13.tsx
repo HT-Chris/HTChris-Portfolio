@@ -37,10 +37,10 @@ export const FE13 = () => {
             </div>
           
           <div id="mobile-parents">
-            <div className={` ${showFather ? '' : 'hide'}`}>
+            <div className={` ${showFather ? 'width-100' : 'hide'}`}>
               <FatherCard/>
             </div>
-            <div className={` ${showFather ? 'hide' : ''}`}>
+            <div className={` ${showFather ? 'hide' : 'width-100'}`}>
               <MotherCard/>
             </div>
           </div>

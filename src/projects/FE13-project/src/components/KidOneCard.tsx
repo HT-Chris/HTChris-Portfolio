@@ -1,5 +1,5 @@
 import {  ClassSprites, SkillIcons } from "../assets/fe-child-files/Awakening-image-library"
-import {useContext, useState} from 'react'
+import {useContext, useState, useEffect} from 'react'
 import { PairingContext } from "./PairingContext"
 
 
@@ -9,11 +9,35 @@ export const  KidOneCard = () => {
   const [tab, setTab] = useState('classes')
   const {childOneData} = useContext(PairingContext)
 
+  const [selectedClass, setSelectedClass] = useState('');
+  const [selectedSkill, setSelectedSkill] = useState('');
+  const [isMobile, setIsMobile] = useState(false)
+
+  const classChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedClass(event.target.value);
+  }
+  
+    const skillChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setSelectedSkill(event.target.value);
+    }
+
   
   const tabSelect = (tabMode:string) =>{
     setTab(tabMode)
   }
   
+  useEffect(()=>{
+    if(window.innerWidth <= 768){
+      setIsMobile(true)
+    }
+
+  }, [])
+
+  useEffect(() =>{
+    setSelectedClass('')
+    setSelectedSkill('')
+  }, [childOneData])
+
 
 
 	return (

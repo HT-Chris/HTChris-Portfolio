@@ -8,23 +8,37 @@ export const  FatherCard = () => {
   const [onClassTab, setOnClassTab] = useState(true)
   const {fatherData} = useContext(PairingContext)
 
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedClass, setSelectedClass] = useState('');
+  const [selectedSkill, setSelectedSkill] = useState('');
+  const [isMobile, setIsMobile] = useState(false)
 
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
+  const classChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedClass(event.target.value);
+  }
+  
+    const skillChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setSelectedSkill(event.target.value);
+    }
 
+
+  useEffect(()=>{
+    if(window.innerWidth <= 768){
+      setIsMobile(true)
+    }
+
+  }, [])
+
+  useEffect(() =>{
+    setSelectedClass('')
+    setSelectedSkill('')
+  }, [fatherData])
+
+  console.log(fatherData)
   const absentFather = fatherData.name === ''
   const avatarParent = fatherData.name === 'AvatarM'
   const classyParent = fatherData.name === 'AvatarM' && onClassTab
 
 
-/**
- * make drop down for skills, and use state
- * remake it all for avatar
- * when selecting a new unit have the state reset
- * make buttons to change between classes and skills
- */
 
 
   useEffect(() => {
@@ -63,53 +77,89 @@ export const  FatherCard = () => {
 
         <div className="unit-card-right">
 
-          <div className={`btn-tabs ${avatarParent ? '' : 'hide'}`}>
+          <div className={`btn-tabs ${avatarParent && !isMobile ? '' : 'hide'}`}>
             <button className={`tab ${onClassTab ? '' : 'tab-bottom-border'}`} onClick={()=>tabSelect('classes')}>Classes</button>
             <button className={`tab ${onClassTab ? 'tab-bottom-border' : ''}`} onClick={()=>tabSelect('skills')}>Skills</button>
           </div>
 
           <div className={`unit-details ${onClassTab ? '' : 'hide'}`}>
-              <h3 className={`${avatarParent ? 'hide' : ''}`}>Classes</h3>
+              <h3 className=''>Classes</h3>
 
             <div className="icons-container">
 
 
 
-            <select name="" id="" onChange={handleChange}>
-            {fatherData.classes.map((c, index) => {
-    const t = c;
-    c = ClassSprites[c.replace(/ /g, '') + '_' + fatherData.sex];
-    return (
-      <option key={index} value={t} style={{ backgroundImage: `url(${c})` }}>
-        {t}
-      </option>
-              )
-    })}
-            </select>
-    <img src={ClassSprites[selectedValue.replace(/ /g, '') + '_' + fatherData.sex] } alt="" />
-
-{/* 
+               <select name="" id="" 
+                    className={`${isMobile ? '' : 'hide'}`} onChange={classChange}>
+                      {fatherData.classes.map((c, index) => {
+              const t = c;
+              c = ClassSprites[c.replace(/ /g, '') + '_' + fatherData.sex];
+              return (
+                <option key={index} value={t} >
+                  {t}
+                </option>
+                        )
+              })}
+                      </select>
+              {selectedClass !== '' && <img src={ClassSprites[selectedClass.replace(/ /g, '') + '_' + fatherData.sex] } alt="" />}
 
               {fatherData.classes.map((c, index) => {
                 const t = c
                 c = ClassSprites[c.replace(/ /g, '') + '_' + fatherData.sex] 
                 return(
-                <div className="sprite-container" key={index}>
+                <div className={`sprite-container ${isMobile ? 'hide' : ''}`}  key={index}>
                   <img className="sprite-img"  src={c} alt="class"  />
                   <div className="details">
                     <p>{t}</p>
                   </div>
                 </div>)
-              })} */}
+              })}
             </div>
           </div>
 
+          <div className={`unit-details ${isMobile && avatarParent ? '' : 'hide'} `}>
+            <h3 className=''>Skills</h3>
+
+              <div className="icons-container">
+
+
+              <select name="" id="" 
+              className={`${isMobile ? '' : 'hide'}`} onChange={skillChange}>
+                {fatherData.skills.map((s, index) => {
+                  const t = s;
+                  s = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.icon
+                  return (
+                    <option key={index} value={t} >
+                      {t}
+                    </option>
+                            )
+                  })}
+                          </select>
+              {selectedSkill !== '' && <img src={SkillIcons[selectedSkill.replace('+','Plus').replace(/ /g,'')]?.icon} alt="" />}
+              </div>
+          </div>
 
           <div className={`unit-details ${classyParent ? 'hide' : ''} `}>
 
-          <h3 className={`${avatarParent ? 'hide' : ''}`}>Skills</h3>
+          <h3 className=''>Skills</h3>
 
           <div className="icons-container">
+
+
+          <select name="" id="" 
+           className={`${isMobile ? '' : 'hide'}`} onChange={skillChange}>
+            {fatherData.skills.map((s, index) => {
+              const t = s;
+              s = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.icon
+              return (
+                <option key={index} value={t} >
+                  {t}
+                </option>
+                        )
+              })}
+                      </select>
+          {selectedSkill !== '' && <img src={SkillIcons[selectedSkill.replace('+','Plus').replace(/ /g,'')]?.icon} alt="" />}
+
 
           {fatherData.skills.map((s, index) => {
             const t = s
@@ -117,7 +167,7 @@ export const  FatherCard = () => {
             s = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.icon
             if(s == undefined) return
             return(
-            <div className="sprite-container" key={index}>
+            <div className={`sprite-container ${isMobile ? 'hide' : ''}`}  key={index}>
               <img className="sprite-img"  src={s} alt="skill" />
               <div className="details">
                 <p>{t}</p>{e}
