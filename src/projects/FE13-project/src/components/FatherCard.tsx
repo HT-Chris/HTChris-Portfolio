@@ -33,7 +33,6 @@ export const  FatherCard = () => {
     setSelectedSkill('')
   }, [fatherData])
 
-  console.log(fatherData)
   const absentFather = fatherData.name === ''
   const avatarParent = fatherData.name === 'AvatarM'
   const classyParent = fatherData.name === 'AvatarM' && onClassTab
@@ -83,7 +82,7 @@ export const  FatherCard = () => {
           </div>
 
           <div className={`unit-details ${onClassTab ? '' : 'hide'}`}>
-              <h3 className=''>Classes</h3>
+              <h4 className=''>Classes</h4>
 
             <div className="icons-container">
 
@@ -118,7 +117,7 @@ export const  FatherCard = () => {
           </div>
 
           <div className={`unit-details ${isMobile && avatarParent ? '' : 'hide'} `}>
-            <h3 className=''>Skills</h3>
+            <h4 className=''>Skills</h4>
 
               <div className="icons-container">
 
@@ -141,7 +140,7 @@ export const  FatherCard = () => {
 
           <div className={`unit-details ${classyParent ? 'hide' : ''} `}>
 
-          <h3 className=''>Skills</h3>
+          <h4 className=''>Skills</h4>
 
           <div className="icons-container">
 

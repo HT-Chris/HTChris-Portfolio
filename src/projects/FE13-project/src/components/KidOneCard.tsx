@@ -55,7 +55,7 @@ export const  KidOneCard = () => {
       </div>
 
       <div className="unit-card-right">
-      <div className={`btn-tabs `}>
+      <div className={`btn-tabs ${isMobile ? 'hide' : ''}`}>
           <button className={`tab ${tab === 'classes' ? '' : 'tab-bottom-border'}`} onClick={()=>tabSelect('classes')}>Classes</button>
           <button className={`tab ${tab === 'skills' ? '' : 'tab-bottom-border'}`} onClick={()=>tabSelect('skills')}>Skills</button>
           <button className={`tab ${tab === 'inherit' ? '' : 'tab-bottom-border'}`} onClick={()=>tabSelect('inherit')}>Inherit</button>
@@ -63,14 +63,29 @@ export const  KidOneCard = () => {
 
         <div className={`unit-details ${tab === 'classes' ? '' : 'hide'}`}>
         
+              <h4>Classes</h4>
             <div className="icons-container">
+
+      
+            <select name="" id="" 
+                    className={`${isMobile ? '' : 'hide'}`} onChange={classChange}>
+                      {childOneData.classes.map((c, index) => {
+              const t = c;
+              c = ClassSprites[c.replace(/ /g, '') + '_' + childOneData.sex];
+              return (
+                <option key={index} value={t} >
+                  {t}
+                </option>
+                        )
+              })}
+                      </select>
 
           {childOneData.classes.map((c, index) => {
             const t = c
             c = ClassSprites[c.replace(/ /g, '') + '_' + childOneData.sex]
             if(c == undefined) return
             return(
-              <div className="sprite-container" key={index}>
+              <div className={`sprite-container ${isMobile ? 'hide' : ''}`} key={index}>
                 <img className="sprite-img" src={c} alt="class" />
                 <div className="details"> 
                   <p>{t}</p>
@@ -80,16 +95,31 @@ export const  KidOneCard = () => {
             </div>
           </div>
 
-          <div className={`unit-details ${tab === 'skills' ? '' : 'hide'}`}>
+          <div className={`unit-details   ${tab === 'skills' ? '' : 'hide'}`}>
+            <h4>Skills</h4>
       
             <div className="icons-container">
+
+            <select name="" id="" 
+              className={`${isMobile ? '' : 'hide'}`} onChange={skillChange}>
+                {childOneData.skills.map((s, index) => {
+                  const t = s;
+                  s = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.icon
+                  return (
+                    <option key={index} value={t} >
+                      {t}
+                    </option>
+                            )
+                  })}
+                          </select>
+
           {childOneData.skills.map((s, index) => {
                 const t = s
                 const e = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.effect
                 s = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.icon
                   if(s == undefined) return
                 return(
-                  <div className="sprite-container" key={index}>
+                  <div className={`sprite-container ${isMobile ? 'hide' : ''}`} key={index}>
                     <img className="sprite-img"  src={s} alt="skill" />
                     <div className="details">
                       <p>{t}</p>{e}
@@ -99,8 +129,24 @@ export const  KidOneCard = () => {
           </div>
           </div>
 
-          <div className={`unit-details ${tab === 'inherit' ? '' : 'hide'}`}>
-        <h3 className={`${childOneData.inherited.length === 0 ? '' : 'hide'}`}>Can learn all skills parents can learn</h3>
+          <div className={`unit-details  ${tab === 'inherit' ? '' : 'hide'}`}>
+
+            <h4>Inheritable</h4>
+
+            <select name="" id="" 
+                    className={`${isMobile ? '' : 'hide'}`} onChange={classChange}>
+                      {Array.isArray(childOneData.inherited) &&
+              childOneData.inherited.map((c, index) => {
+              const t = c;
+              c = ClassSprites[c.replace(/ /g, '') + '_' + childOneData.sex];
+              return (
+                <option key={index} value={t} >
+                  {t}
+                </option>
+                        )
+              })}
+                      </select>
+        <h6 className={`${childOneData.inherited.length === 0 ? '' : 'hide'}`}>Can learn all skills parents can learn</h6>
               
               <div className="icons-container">
               {Array.isArray(childOneData.inherited) &&
@@ -110,7 +156,7 @@ export const  KidOneCard = () => {
                   s = SkillIcons[s?.replace('+','Plus').replace(/ /g,'')]?.icon
               if(s == undefined) return
                 return(
-              <div className="sprite-container" key={index}>
+              <div className={`sprite-container ${isMobile ? 'hide' : ''}`} key={index}>
                 <img className="sprite-img"  src={s} alt="skill" />
                 <div className="details">
                       <p>{t}</p>{e}

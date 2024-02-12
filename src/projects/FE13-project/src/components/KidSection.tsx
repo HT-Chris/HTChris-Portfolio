@@ -71,10 +71,10 @@ const noBabyMessage = (dad:string, mom:string) => {
                 <button className={`btn-child  mobile-tab ${showChildOne? 'child-border' : ''} ${ childTwoData.name === '' ? 'hide' : ''}`} onClick={() => childBtnHandler('two')}>2nd Child</button>
                 </div>
             
-                <div className={`${showChildOne ? '' : 'hide'}`}>
+                <div className={`${showChildOne ? 'width-100' : 'hide'}`}>
                     <KidOneCard/>
                 </div>
-                <div className={`${showChildOne || childTwoData.name === '' ? 'hide' : ''}`}>
+                <div className={`${showChildOne || childTwoData.name === '' ? 'hide' : 'width-100'}`}>
                     <KidTwoCard/>
                 </div>
             </div>
@@ -91,10 +91,10 @@ const noBabyMessage = (dad:string, mom:string) => {
 
                 
             
-                <div className={` kid-box ${showChildOne ? '' : 'hide'}`}>
+                <div className={` kid-box ${showChildOne ? 'width-100' : 'hide'}`}>
                     <KidOneCard/>
                 </div>
-                <div className={` kid-box ${ childTwoData.name === '' ? 'hide' : ''}`}>
+                <div className={` kid-box ${ childTwoData.name === 'width-100' ? 'hide' : ''}`}>
                     <KidTwoCard/>
                 </div>
             </div>

@@ -309,7 +309,6 @@ select {
     display: flex;
     min-height: 550px;
     height: 100%;
-    gap: 5px;
 }
 
 .parent-unit {
@@ -371,7 +370,7 @@ select {
 }
 
 .child-unit {
-    padding: 15px;
+    padding: 5px;
     border: 6px solid var(--menu-border);
     background-color: var(--child-body);
     height: 100%;
@@ -501,7 +500,7 @@ select {
     }
     #logo-mobile {
         max-width: none;
-        width: 100%;
+        width: 75%;
     }
     #mobile-parents {
         display: block;
@@ -577,9 +576,9 @@ select {
     }
     .unit-details {
         max-width: none;
-        padding: 5px;
+        padding: 3px;
         width: 100%;
-        margin: 5px;
+        margin: 3px;
     }
     .icons-container {
         justify-content: space-between;
