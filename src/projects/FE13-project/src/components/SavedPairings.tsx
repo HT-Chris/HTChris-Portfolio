@@ -22,7 +22,7 @@ export const SavedPairings = () => {
 				<button className={`btn btn-green ${closedListMobile ? 'hide' : ''}`} onClick={()=>addPairing()}>Add Pair</button>
 				<button className="btn btn-blue" onClick={()=>returnToDisplay()}>Re-display</button>
 				<button className="btn btn-red" onClick={()=>resetList()}>Rest Pairings</button>
-				<button className="btn btn-close" onClick={closedListMobileHandle}>Close List</button>
+				<button className="btn btn-close-fe13" onClick={closedListMobileHandle}>Close List</button>
 			</div>
 			{pairingList.map((p, index) =>(
 				<span key={index}>

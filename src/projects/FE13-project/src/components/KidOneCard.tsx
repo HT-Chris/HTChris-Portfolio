@@ -11,6 +11,7 @@ export const  KidOneCard = () => {
 
   const [selectedClass, setSelectedClass] = useState('');
   const [selectedSkill, setSelectedSkill] = useState('');
+  const [selectedInherit, setSelectedInherit] = useState('');
   const [isMobile, setIsMobile] = useState(false)
 
   const classChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -19,6 +20,9 @@ export const  KidOneCard = () => {
   
     const skillChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
       setSelectedSkill(event.target.value);
+    }
+    const inheritChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+      setSelectedInherit(event.target.value);
     }
 
   
@@ -36,6 +40,8 @@ export const  KidOneCard = () => {
   useEffect(() =>{
     setSelectedClass('')
     setSelectedSkill('')
+    setSelectedInherit('')
+
   }, [childOneData])
 
 
@@ -79,6 +85,8 @@ export const  KidOneCard = () => {
                         )
               })}
                       </select>
+              {selectedClass !== '' && <img src={ClassSprites[selectedClass.replace(/ /g, '') + '_' + childOneData.sex] } alt="" />}
+                      
 
           {childOneData.classes.map((c, index) => {
             const t = c
@@ -95,7 +103,7 @@ export const  KidOneCard = () => {
             </div>
           </div>
 
-          <div className={`unit-details   ${tab === 'skills' ? '' : 'hide'}`}>
+          <div className={`unit-details   ${tab === 'skills' || isMobile ? '' : 'hide'}`}>
             <h4>Skills</h4>
       
             <div className="icons-container">
@@ -112,6 +120,8 @@ export const  KidOneCard = () => {
                             )
                   })}
                           </select>
+              {selectedSkill !== '' && <img src={SkillIcons[selectedSkill.replace('+','Plus').replace(/ /g,'')]?.icon} alt="" />}
+
 
           {childOneData.skills.map((s, index) => {
                 const t = s
@@ -129,12 +139,13 @@ export const  KidOneCard = () => {
           </div>
           </div>
 
-          <div className={`unit-details  ${tab === 'inherit' ? '' : 'hide'}`}>
+          <div className={`unit-details  ${tab === 'inherit' || isMobile ? '' : 'hide'}`}>
 
             <h4>Inheritable</h4>
+            <div className="icons-container">
 
-            <select name="" id="" 
-                    className={`${isMobile ? '' : 'hide'}`} onChange={classChange}>
+            {childOneData.inherited.length !== 0 && <select name="" id="" 
+                    className={`${isMobile ? '' : 'hide'}`} onChange={inheritChange}>
                       {Array.isArray(childOneData.inherited) &&
               childOneData.inherited.map((c, index) => {
               const t = c;
@@ -145,8 +156,12 @@ export const  KidOneCard = () => {
                 </option>
                         )
               })}
-                      </select>
-        <h6 className={`${childOneData.inherited.length === 0 ? '' : 'hide'}`}>Can learn all skills parents can learn</h6>
+                      </select>}
+
+          {selectedInherit !== '' && <img src={SkillIcons[selectedInherit.replace('+','Plus').replace(/ /g,'')]?.icon} alt="" />}
+
+
+        <p className={`${childOneData.inherited.length === 0 ? '' : 'hide'}`}>All skills accessible</p>
               
               <div className="icons-container">
               {Array.isArray(childOneData.inherited) &&
@@ -166,7 +181,7 @@ export const  KidOneCard = () => {
            </div>
             </div>
       </div>
-
+      </div>
 
     </div>
 	)
