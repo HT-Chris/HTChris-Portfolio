@@ -23,7 +23,7 @@ const isSingle = (name:string) =>{
           if(UnitImages[unit].male){
             return   (
           <option className={`sprite-container ${unit} `} disabled={!isSingle(unit)} 
-              key={index} onClick={()=>setParent(unit, 'm')}>
+              key={index} onClick={()=>setParent(unit, 'm')}  onChange={()=>setParent(unit, 'm')}>
             {unit}
           </option>
         )}})}
@@ -35,7 +35,7 @@ const isSingle = (name:string) =>{
           if(UnitImages[unit].male === false){
             return   (
           <option className={`sprite-container ${unit} `} disabled={!isSingle(unit)} 
-              key={index} onClick={()=>setParent(unit, 'f')}>
+              key={index} onClick={()=>setParent(unit, 'f')} onChange={()=>setParent(unit, 'f')}>
             {unit}
           </option>
         )}})}
