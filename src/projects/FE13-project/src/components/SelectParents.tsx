@@ -12,24 +12,30 @@ const isSingle = (name:string) =>{
   return hitchedList.indexOf(name) == -1
 }
 
+const parentChangeM = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  setParent(event.target.value, 'm');
+};
+const parentChangeF = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  setParent(event.target.value, 'f');
+};
 
 	return(
   <>
 
     <div className="mobile-parent-select-container ">
-    <select className="mobile-parent-select select-father">
+    <select value={this} onChange={parentChangeM} className="mobile-parent-select select-father">
         <option disabled selected>Father</option>
         {Object.keys(UnitImages).map((unit, index)=> {
           if(UnitImages[unit].male){
             return   (
           <option className={`sprite-container ${unit} `} disabled={!isSingle(unit)} 
-              key={index} onClick={()=>setParent(unit, 'm')}  onChange={()=>setParent(unit, 'm')}>
+              key={index} onClick={()=>setParent(unit, 'm')}  >
             {unit}
           </option>
         )}})}
       </select>
 
-    <select className="mobile-parent-select select-mother">
+    <select  value={this} onChange={parentChangeF}  className="mobile-parent-select select-mother">
         <option disabled selected>Mother</option>
         {Object.keys(UnitImages).map((unit, index)=> {
           if(UnitImages[unit].male === false){
