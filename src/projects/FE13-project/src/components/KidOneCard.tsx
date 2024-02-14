@@ -31,10 +31,13 @@ export const  KidOneCard = () => {
   }
   
   useEffect(()=>{
-    if(window.innerWidth <= 768){
-      setIsMobile(true)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
     }
-
   }, [])
 
   useEffect(() =>{

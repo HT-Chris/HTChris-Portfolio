@@ -14,10 +14,13 @@ export const  KidTwoCard = () => {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(()=>{
-    if(window.innerWidth <= 768){
-      setIsMobile(true)
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
     }
-
   }, [])
 
   useEffect(() =>{
@@ -26,7 +29,6 @@ export const  KidTwoCard = () => {
     setSelectedInherit('')
   }, [childTwoData])
 
-console.log(childTwoData.inherited)
   const classChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectedClass(event.target.value);
   }

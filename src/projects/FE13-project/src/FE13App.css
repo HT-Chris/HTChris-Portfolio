@@ -305,7 +305,7 @@ select {
 }
 
 #parent-pairing-container {
-    /* width: 950px; */
+    gap: 3px;
     display: flex;
     min-height: 550px;
     height: 100%;
@@ -353,6 +353,7 @@ select {
 .father-container {
     background-color: var(--male-body);
     border: 5px solid var(--male-border);
+    padding: 5px;
 }
 
 .mother-container {
@@ -525,7 +526,6 @@ select {
         display: none;
     }
     #parents-selected {
-        padding: 1rem;
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -588,6 +588,8 @@ select {
         content: '';
         width: 20%;
         border: 1px solid transparent;
+        height: 30px;
+        object-fit: contain;
     }
     .unit-card-right select {
         width: 75%;
