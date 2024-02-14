@@ -56,6 +56,7 @@ export const  FatherCard = () => {
   }
 
 
+  console.log(fatherData)
 
 	return (
 
