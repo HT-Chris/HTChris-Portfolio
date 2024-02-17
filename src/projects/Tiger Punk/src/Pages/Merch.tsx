@@ -16,7 +16,7 @@ export const Merch = () => {
 
 				{products.map((product) =>
 				<div className="polaroid-card product-card"  key={product.id}>
-					<Link to={`/product/${product.id}`}>
+					<Link to={`/Tigerpunk/product/${product.id}`}>
 				<div className="polaroid-img-container">
 					<img className='polaroid-img product-card-img' src={product.imageUrl} alt={`${product.name}`} />
 				</div>

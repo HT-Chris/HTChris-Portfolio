@@ -7,7 +7,7 @@ export const ProjectList = [
         title:'TigerPunk',
         skills:['HTML', 'CSS', 'React','Typescript', 'NPM'],
         details:'A mock website for a band. This website features an e-commerce store, multiple pages, and email submission. ',
-        links:['./', 'https://github.com/Pthalo000f89/Tiger-Punk'],
+        links:['/Tigerpunk', 'https://github.com/Pthalo000f89/Tiger-Punk'],
     },
    {
         thumbnail:'',

@@ -18,23 +18,23 @@ const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0)
         <img className='logo-sm' src={logo} alt="Tiger Punk Logo" />
         <ul>
           <li  className={`nav-item ${navItemSelected === 'Home' ? 'selectedNav ': ''}`}>
-              <Link to='/' onClick={()=>selectNavItem('Home' )}>Home</Link>
+              <Link to='/Tigerpunk' onClick={()=>selectNavItem('Home' )}>Home</Link>
           </li>
           <li  className={`nav-item ${navItemSelected === 'Tour' ? 'selectedNav ': ''}`}>
-            <Link to='/TourDates' onClick={()=>selectNavItem('Tour' )}>Tour Dates</Link>
+            <Link to='/Tigerpunk/TourDates' onClick={()=>selectNavItem('Tour' )}>Tour Dates</Link>
           </li>
           <li className={`nav-item ${navItemSelected === 'Gallery' ? 'selectedNav ': ''}`}>
-            <Link to='/Gallery'  onClick={()=>selectNavItem('Gallery' )}>Gallery</Link>
+            <Link to='/Tigerpunk/Gallery'  onClick={()=>selectNavItem('Gallery' )}>Gallery</Link>
           </li>
           <li className={`nav-item ${navItemSelected === 'Merch' ? 'selectedNav ': ''}`}>
-            <Link to='/Merch' onClick={()=>selectNavItem('Merch' )} >Merch</Link>
+            <Link to='/Tigerpunk/Merch' onClick={()=>selectNavItem('Merch' )} >Merch</Link>
           </li>
-          {cart.length === 0 ? '' : <p id='cart-quantity'>{totalItems}</p>}
           <li className={`nav-item ${navItemSelected === 'Cart' ? 'selectedNav ': ''}`}>
-            <Link to='/Cart' onClick={()=>selectNavItem('Cart' )} >Cart</Link>
+            <Link to='/Tigerpunk/Cart' onClick={()=>selectNavItem('Cart' )} >Cart</Link>
+          {cart.length === 0 ? '' : <p id='cart-quantity'>{totalItems}</p>}
           </li>
           <li className={`nav-item ${navItemSelected === 'Contacts' ? 'selectedNav ': ''}`}>
-            <Link to='/Contacts' onClick={()=>selectNavItem('Contacts' )} >Contacts</Link>
+            <Link to='/Tigerpunk/Contacts' onClick={()=>selectNavItem('Contacts' )} >Contacts</Link>
           </li>
         </ul>
       </nav>

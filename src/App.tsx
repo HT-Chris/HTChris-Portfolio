@@ -25,7 +25,7 @@ function App() {
     <Routes>
 
         <Route path="/" element={<Homepage/>} />
-        <Route path="/TigerPunk" element={<TigerPunkApp/>} />
+        <Route path="/TigerPunk/*" element={<TigerPunkApp/>} />
         {/* other pages compliant
       edit placement
         mobile
