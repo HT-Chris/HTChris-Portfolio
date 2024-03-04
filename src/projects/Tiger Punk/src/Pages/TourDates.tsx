@@ -33,9 +33,9 @@ export const TourDates = () => {
 			
 			<header id="tour-date-header">
 				<h2 id="tour-header-date">Date</h2>
-				<h2 id="tour-header-city">City, State</h2>
+				<h2 id="tour-header-city">City</h2>
 				<h2 id="tour-header-venue">Venue</h2>
-				<h2 id="tour-header-tickets">Get Tickets</h2>
+				<h2 id="tour-header-tickets">Tickets</h2>
 			</header>
 					<span className="line"></span>
 					<li className=' tour-date-table'>

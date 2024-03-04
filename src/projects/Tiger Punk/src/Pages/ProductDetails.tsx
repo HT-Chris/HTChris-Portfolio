@@ -3,7 +3,7 @@ import { products } from '../assets/Products/ProductsList'
 import { Footer } from '../Components/Footer';
 import { NavBar } from '../Components/NavBar';
 import { productType, TigerPunkContext } from '../Components/TigerPunkContext';
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 
 
 export const ProductDetails = () => {
@@ -11,6 +11,7 @@ export const ProductDetails = () => {
 	const { productId } = useParams<{ productId: string }>();
 	const product = products.find((product:productType) => product.id === Number(productId));
 	const [itemQuantity, setItemQuantity] = useState(0)
+	const [cartMessage, setCartMessage] = useState(false)
 
 	const updateItemQuantity = (val:string) => {
 		if(itemQuantity === 0 && val === '-') return
@@ -22,8 +23,25 @@ export const ProductDetails = () => {
 		}
 	}
 
+	useEffect(()=>{
+		if (cartMessage) {
+			const timer = setTimeout(() => {
+				setCartMessage(false);
+			}, 1900);
+		return () => clearTimeout(timer);
+    }
+  }, [cartMessage]);
+
+
 	const inCartQuantity = cart.find((item) => item.id === Number(productId))?.quantity || 0
 
+	const addBtn = () => {
+		if(product && itemQuantity !== 0){
+		updateCart(product.id, inCartQuantity + itemQuantity)
+		setItemQuantity(0)
+	setCartMessage(true)}
+
+	}
 
 	if (!product) {
 		return <div>Product not found</div>;
@@ -33,6 +51,12 @@ export const ProductDetails = () => {
 		<>
 		<NavBar/>
 		<div id="product-page-container" className="tiger-punk-app">
+
+		{cartMessage && <div className='add-message'>
+				<h2>
+				Item(s) added to cart
+				</h2>
+			</div>}
 
 			<h1>Product Details</h1>
 
@@ -46,13 +70,12 @@ export const ProductDetails = () => {
 					<p className='product-price'>${product.price}</p>
 					<p>{product.description}</p>
 					<div className="cart-inputs">
-						{/* <input type="number" name="" min='0' className='input' placeholder={inCartQuantity.toString()} onChange={updateItemQuantity} /> */}
 						<div className="quantity-btns">
 							<button className="btn-down" onClick={()=>updateItemQuantity('-')}>-</button>
 							<p className='item-quantity'>{itemQuantity}</p>
 							<button className="btn-up" onClick={()=>updateItemQuantity('+')}>+</button>
 						</div>
-						<button className="btn btn-product"onClick={()=>updateCart(product.id, inCartQuantity + itemQuantity)}>Add To Cart</button>
+						<button className="btn btn-product"onClick={()=>addBtn()}>Add To Cart</button>
 					</div>
 				</div>
 			</div>

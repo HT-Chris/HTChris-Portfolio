@@ -27,22 +27,22 @@ export const Footer = () => {
 			<div id="footer-links">
 			<ul>
 				<li className="nav-item"> 
-					<Link to='/' onClick={()=>selectNavItem('Home' )}>Home</Link>
+					<Link to='/Tigerpunk' onClick={()=>selectNavItem('Home' )}>Home</Link>
 				</li>
 				<li className="nav-item"> 
-					<Link to='/TourDates' onClick={()=>selectNavItem('Tour' )}>Tour Dates</Link>
+					<Link to='/Tigerpunk/TourDates' onClick={()=>selectNavItem('Tour' )}>Tour Dates</Link>
 				</li>
 				<li className="nav-item"> 
-					<Link to='/Gallery'  onClick={()=>selectNavItem('Gallery' )}>Gallery</Link>
+					<Link to='/Tigerpunk/Gallery'  onClick={()=>selectNavItem('Gallery' )}>Gallery</Link>
 				</li>
 				<li className="nav-item"> 
-					<Link to='/Merch' onClick={()=>selectNavItem('Merch' )} >Merch</Link>
+					<Link to='/Tigerpunk/Merch' onClick={()=>selectNavItem('Merch' )} >Merch</Link>
 				</li>
 				<li className="nav-item"> 
-					<Link to='/Cart' onClick={()=>selectNavItem('Cart' )} >Cart</Link>
+					<Link to='/Tigerpunk/Cart' onClick={()=>selectNavItem('Cart' )} >Cart</Link>
 				</li>
 				<li className="nav-item"> 
-					<Link to='/Contacts' onClick={()=>selectNavItem('Contacts' )} >Contacts</Link>
+					<Link to='/Tigerpunk/Contacts' onClick={()=>selectNavItem('Contacts' )} >Contacts</Link>
 				</li>
 				
 			</ul>

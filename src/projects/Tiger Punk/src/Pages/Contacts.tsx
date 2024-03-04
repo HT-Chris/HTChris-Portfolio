@@ -15,14 +15,14 @@ export const Contacts = () => {
 			<div id="contacts-booking">
 				<h2>For Booking</h2>
 				<div className="input-btn">
-					<input type="email" name="" placeholder="Book" id="contact-email-input" className="input"/>
+					<input type="email" name="" placeholder="Enter Email" id="contact-email-input" className="input"/>
 					<button className="btn btn-contacts">Book Us</button>
 				</div>
 			</div>
 			<div id="contacts-newsletter">
 				<h2>Join Our Newsletter!</h2>
 				<div className="input-btn">
-					<input type="email" name="" placeholder="Join" id="contact-newsletter-input" className="input" />
+					<input type="email" name="" placeholder="Enter Email" id="contact-newsletter-input" className="input" />
 					<button className="btn  btn-contacts">Join</button>
 				</div>
 			</div>

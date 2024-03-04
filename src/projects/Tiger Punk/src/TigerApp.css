@@ -103,7 +103,7 @@ h1 {
     font-size: 3rem;
 }
 
-ul {
+#tiger-nav-ul {
     list-style: none;
     display: flex;
     gap: 0.8rem;
@@ -116,6 +116,7 @@ ul {
 li {
     border: 2px solid transparent;
     border-radius: 25px;
+    font-size: 1.3rem;
 }
 
 a {
@@ -155,6 +156,52 @@ a:visited {
 
 .btn:hover {
     cursor: pointer;
+}
+
+#tiger-mobile-button {
+    display: none;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid transparent;
+    right: 25px;
+}
+
+#tiger-nav-mobile {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 50%;
+    background-color: var(--ash-gray);
+    color: var(--aureolin);
+    z-index: 50;
+}
+
+#tiger-mobile-ul {
+    display: flex;
+    height: 75%;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    list-style: none;
+    justify-content: center;
+}
+
+#tiger-mobile-ul a {
+    font-size: 3rem;
+}
+
+#mobile-x {
+    font-size: 30px;
+    background-color: transparent;
+    border: 1px solid transparent;
 }
 
 
@@ -204,7 +251,7 @@ a:visited {
 
 #tiger-hero-text h1 {
     line-height: 5rem;
-    font-size: 4.5rem;
+    font-size: 8rem;
     width: 75%;
 }
 
@@ -287,7 +334,7 @@ a:visited {
 #footer-main {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: auto 0.6rem;
+    grid-template-rows: auto auto;
     width: 100%;
     z-index: 3;
     background-color: black;
@@ -356,9 +403,11 @@ a:visited {
     align-items: center;
     flex-direction: row;
     gap: 1rem;
-    grid-row: 2;
-    grid-column: 1 /span 6;
-    font-size: 0.5rem;
+    grid-row: 2 /span;
+    grid-column: 1 /span 8;
+    font-size: 10px;
+    width: 100%;
+    padding: none;
 }
 
 #spotify-icon {
@@ -476,6 +525,11 @@ a:visited {
 
 /* Notebook Paper  */
 
+#tour-shows {
+    gap: 11.5px;
+    margin-top: 18px;
+}
+
 #tour-dates-home {
     width: 100%;
     margin-top: 50px;
@@ -483,6 +537,15 @@ a:visited {
     justify-content: center;
     flex-direction: column;
     display: flex;
+}
+
+#paper ul {
+    gap: 6px;
+    margin-top: 35px;
+}
+
+#paper li {
+    font-size: 0.8rem;
 }
 
 .btn-home-tickets {
@@ -510,7 +573,7 @@ a:visited {
 
 #paper {
     width: 600px;
-    height: 500px;
+    height: 800px;
     position: relative;
     margin: 20px auto;
     padding-top: 40px;
@@ -570,7 +633,7 @@ a:visited {
     text-decoration-thickness: 0.1rem;
 }
 
-.sold-out {
+#root-main .sold-out {
     position: absolute;
     margin-left: 7rem;
     color: red;
@@ -581,7 +644,7 @@ a:visited {
     font-size: 1rem;
     text-shadow: 2px 2px 2px black;
     width: 120px;
-    height: 20px;
+    height: 18px;
     display: grid;
     place-items: center;
     font-family: 'Courier New', Courier, monospace;
@@ -604,6 +667,7 @@ a:visited {
     color: var(--coral);
     text-shadow: 10px 10px 5px black;
     gap: 30px;
+    height: 100dvh;
 }
 
 #contacts-page h1 {
@@ -725,6 +789,33 @@ a:visited {
     color: var(--orange);
 }
 
+.add-message {
+    position: absolute;
+    min-width: 275px;
+    min-height: 275px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: var(--orange);
+    background-color: var(--ash-gray);
+    border-radius: 10px;
+    z-index: 25;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 .product-details-page {
     height: 100%;
     max-width: 800px;
@@ -780,7 +871,7 @@ a:visited {
     z-index: 21;
     font-size: 10px;
     top: 20%;
-    transform: translateX(1rem);
+    transform: translateX(1.8rem);
     position: absolute;
     height: 18px;
     place-items: center;
@@ -855,13 +946,22 @@ a:visited {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 1.5rem;
     padding: 10px;
     background-color: var(--platinum);
     color: var(--jet);
     text-shadow: 5px 5px 5px var(--aureolin);
     border-radius: 5px;
     box-shadow: 10px 10px 10px black;
+}
+
+.cart-item-details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: .5rem;
 }
 
 .cart-img-container {
@@ -941,6 +1041,7 @@ a:visited {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 80%;
 }
 
 #tour-date-header {
@@ -948,8 +1049,12 @@ a:visited {
     width: 100%;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--orange);
+}
+
+#root-main #tour-date-header {
+    font-size: 2rem;
 }
 
 #tour-header-date {
@@ -982,7 +1087,6 @@ a:visited {
 
 .tour-page-city {
     grid-column: 2;
-    color: var(--jet);
 }
 
 .tour-page-venue {
@@ -996,7 +1100,7 @@ a:visited {
     margin: 0;
     font-size: 1.2rem;
     padding: 10px;
-    min-width: 200px;
+    width: 200px;
     place-self: center;
 }
 
@@ -1040,6 +1144,208 @@ a:visited {
 
 
 /* Misc */
+
+
+/* Media Query */
+
+@media screen and (max-width: 1440px) {
+    #paper {
+        height: 500px;
+    }
+    #paper ul {
+        gap: 11.5px;
+        margin-top: 40px;
+    }
+    #paper li {
+        font-size: 1.3rem;
+    }
+    #root-main .sold-out {
+        font-size: 13px;
+    }
+    #root-main #footer-legal p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #tiger-nav-bar {
+        justify-content: center;
+    }
+    #tiger-nav-ul {
+        display: none;
+    }
+    #tiger-mobile-ul {
+        display: flex;
+    }
+    #tiger-mobile-button {
+        display: flex;
+    }
+    #tiger-nav-mobile {
+        display: flex;
+    }
+    #tiger-hero-text {
+        width: 100vw;
+    }
+    #root-main #cart-quantity {
+        top: auto;
+        font-size: 22px;
+        background-color: transparent;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        margin-left: 10px;
+        color: var(--orange);
+        font-weight: 900;
+        transform: none;
+        position: relative;
+    }
+    .nav-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .selectedNav {
+        background-color: transparent;
+        border: none;
+    }
+    .hero-text-p {
+        width: 80vw;
+    }
+    .text-hard {
+        grid-column: 1;
+    }
+    .text-loud {
+        grid-column: 1;
+    }
+    .btn-home-tickets-hero {
+        margin-top: 50px;
+        width: 100%;
+    }
+    #tour-dates-home {
+        display: none;
+    }
+    #paper {
+        width: 100%;
+    }
+    #gallery-section {
+        margin-top: 0;
+    }
+    #gallery-homepage {
+        display: flex;
+        flex-direction: column;
+        margin-top: -80px;
+    }
+    #gallery-home-container {
+        align-items: flex-start;
+    }
+    #gallery-homepage .polaroid-card {
+        width: 150px;
+    }
+    #gallery-homepage .polaroid-card:hover {
+        width: 200px;
+    }
+    #home-slide {}
+    .btn-merch-slide {
+        display: none;
+    }
+    .home-img {
+        width: 100%;
+        height: 80%;
+    }
+    #tour-dates-page {
+        padding: 10px;
+        margin-top: 60px;
+    }
+    #tour-date-header h2 {
+        margin-top: 30px;
+        font-size: 16px;
+    }
+    #root-main .tour-date-table p {
+        font-size: 12px;
+    }
+    .tour-date-table .btn-ticket {
+        width: 60px;
+        height: 50px;
+    }
+    #gallery-page-container {
+        grid-template-columns: none;
+    }
+    .gallery-polaroid:hover {
+        transform: scale(1.3);
+    }
+    #merch-page-items {
+        grid-template-columns: none;
+    }
+    .product-card a {
+        font-size: 20px;
+    }
+    #root-main .product-price {
+        font-size: 20px;
+    }
+    .product-details-page {
+        grid-template-columns: 1fr;
+        padding: 5px;
+        gap: 10px;
+    }
+    .product-details-text {
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        height: auto;
+        padding: 20px;
+    }
+    .cart-inputs {
+        justify-content: center;
+        align-items: center;
+    }
+    .quantity-btns {
+        width: 80%;
+        height: 50px;
+    }
+    .quantity-btns .item-quantity {
+        border-right: 2px solid var(--aureolin);
+        border-left: 2px solid var(--aureolin);
+    }
+    .product-details-img-container {
+        width: 85%;
+        height: auto;
+    }
+    .input-btn {
+        display: flex;
+        flex-direction: column;
+    }
+    .input-btn .btn-contacts {
+        width: 100%;
+        border: 2px solid grey;
+    }
+    #contacts-page h2 {
+        font-size: 20px;
+        text-align: center;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    }
+    #contacts-page h1 {
+        font-size: 35px;
+        padding: none;
+    }
+    #contacts-social {
+        display: none;
+    }
+    #contacts-info {}
+    #footer-newsletter,
+    #contact-group,
+    #footer-links {
+        display: none;
+    }
+    #footer-social {
+        flex-direction: row;
+        grid-column: 2;
+        justify-content: space-between;
+        gap: 10px;
+    }
+    #root-main #footer-legal p {
+        font-size: 12px;
+    }
+}
 
 .hide {
     display: none;

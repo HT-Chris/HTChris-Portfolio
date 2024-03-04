@@ -43,7 +43,7 @@ export const Home = () => {
 					<h1 className="text-loud">Loud</h1>
 					<p className='hero-text-p'>We believe that energy can be pass from person to person in the form of art.  It's how we breathe life into one another. And we will not stop, 
 						We are Tiger Punk!</p>
-					<Link to='/TourDates' className="home-tickets-link" onClick={()=>selectNavItem('Tour' )}>
+					<Link to='/Tigerpunk/TourDates' className="home-tickets-link" onClick={()=>selectNavItem('Tour' )}>
 						<button className="btn-home-tickets-hero">
 							Get Tickets!
 							</button>
@@ -60,7 +60,7 @@ export const Home = () => {
 						<h2>
 							Tour Dates
 						</h2>
-							<ul>
+							<ul id='tour-shows'>
 								<li className='line-through'>
 								<p className='sold-out'>Sold Out!</p>
 									November 10, 2023 - Phoenix, Arizona at Starlight Hall
@@ -113,7 +113,7 @@ export const Home = () => {
 						</div>
 					</div>
 				</div>
-				<Link to='/TourDates' onClick={()=>selectNavItem('Tour' )}>
+				<Link to='/Tigerpunk/TourDates' onClick={()=>selectNavItem('Tour' )}>
 					<button className="btn-home-tickets">Get Tickets!</button>
 				</Link>
 			
@@ -131,7 +131,7 @@ export const Home = () => {
 
 			<div id='home-slide'>
 				<button className='btn btn-merch-slide' onClick={prevSlide}>PREV</button>
-					<Link to='/Merch' onClick={()=>selectNavItem('Merch' )}>
+					<Link to='/Tigerpunk/Merch' onClick={()=>selectNavItem('Merch' )}>
 						<img className='home-img' src={merchItems[currentSlide]} alt="carousel" />
 					</Link>
 				<button className='btn btn-merch-slide' onClick={nextSlide}>Next</button>
