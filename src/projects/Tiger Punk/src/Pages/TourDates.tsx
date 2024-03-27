@@ -22,7 +22,7 @@ export const TourDates = () => {
 
 			<div className={`ticket-message ${getTickets ? '' : 'hide'}`}>
 				<h2>Tickets Purchased!</h2>
-				<button className="btn" onClick={()=>getTicketsBtn(false)}>Back</button>
+				<button className="btn-back" onClick={()=>getTicketsBtn(false)}>Back</button>
 			</div>
 		
 			<h1>

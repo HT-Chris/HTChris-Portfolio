@@ -4,6 +4,10 @@ import { Footer } from '../Components/Footer';
 import { NavBar } from '../Components/NavBar';
 import { productType, TigerPunkContext } from '../Components/TigerPunkContext';
 import { useContext, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+
+
 
 
 export const ProductDetails = () => {
@@ -22,6 +26,8 @@ export const ProductDetails = () => {
 		setItemQuantity(prev => prev + 1)
 		}
 	}
+
+	
 
 	useEffect(()=>{
 		if (cartMessage) {
@@ -57,6 +63,12 @@ export const ProductDetails = () => {
 				Item(s) added to cart
 				</h2>
 			</div>}
+
+			<div className="merch-back-button">
+				<Link to='/Tigerpunk/Merch'>
+				<button className='btn btn-back'>Back</button>
+				</Link>
+			</div>
 
 			<h1>Product Details</h1>
 

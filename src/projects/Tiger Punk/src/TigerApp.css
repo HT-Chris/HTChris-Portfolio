@@ -328,6 +328,22 @@ a:visited {
     box-shadow: 5px 5px 5px black;
 }
 
+.merch-back-button {
+    left: 0;
+    width: 90%;
+    max-width: 800px;
+}
+
+.btn-back {
+    width: auto;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    background-color: var(--aureolin);
+    color: var(--jet-partial);
+}
+
 
 /* Footer */
 
@@ -685,6 +701,11 @@ a:visited {
 
 .btn-contacts {
     min-width: 150px;
+    border-radius: 5px;
+    background-color: var(--jet);
+    color: var(--aureolin);
+    box-shadow: 5px 5px 5px black;
+    border: 1px solid transparent;
 }
 
 #contacts-social {
@@ -822,7 +843,7 @@ a:visited {
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding: 100px;
+    padding: 100px 0 100px 0;
     display: grid;
     place-items: center;
     gap: 100px;
@@ -865,6 +886,10 @@ a:visited {
 .btn-product {
     border-radius: 5px;
     min-width: 140px;
+    border-radius: 5px;
+    background-color: var(--jet);
+    color: var(--aureolin);
+    box-shadow: 5px 5px 5px black;
 }
 
 #root-main #cart-quantity {
@@ -974,7 +999,7 @@ a:visited {
 }
 
 .cart-input {
-    font-size: 1rem;
+    font-size: 14px;
     width: 50px;
     border-radius: 5px;
     height: 30px;
@@ -983,6 +1008,17 @@ a:visited {
     color: var(--aureolin);
     margin-right: 10px;
     box-shadow: 5px 5px 5px var(--jet);
+}
+
+#cart-total {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}
+
+#cart-total h2 {
+    font-size: 2rem;
+    color: var(--aureolin);
 }
 
 .btn-checkout {
@@ -998,7 +1034,7 @@ a:visited {
 }
 
 .checkout-message {
-    font-size: 1.2rem;
+    font-size: 2rem;
     color: var(--jet);
     text-shadow: 5px 5px 5px var(--aureolin);
     height: 300px;
@@ -1124,9 +1160,12 @@ a:visited {
     transform: rotate(6deg) translate(-50%, 0%);
 }
 
+.ticket-message h2 {
+    font-size: 30px;
+}
+
 .ticket-message {
     z-index: 11;
-    font-size: 1.2rem;
     color: var(--jet);
     text-shadow: 5px 5px 5px var(--aureolin);
     height: 300px;

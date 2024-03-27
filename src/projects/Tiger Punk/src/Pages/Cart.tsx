@@ -9,6 +9,12 @@ export const Cart = () => {
 	const {cart, removeItem, updateCart, clearCart} = useContext(TigerPunkContext)
 
 
+ /* 
+ * total 
+ total cost of singular item
+ quantity change
+ */
+
 	const checkoutBtn = (set:boolean) =>{
 		setIsCheckedOut(set)
 		setTimeout(() => {
@@ -29,7 +35,7 @@ export const Cart = () => {
 
 			<div className={`checkout-message ${isCheckedOut ? '' : 'hide'}`}>
 				<h2>You Checked Out!</h2>
-				<button className="btn" onClick={()=>checkoutBtn(false)}>Back</button>
+				<button className="btn-checkout" onClick={()=>checkoutBtn(false)}>Back</button>
 			</div>
 			<h1>Cart</h1>
 			{cart.length == 0 ? 
@@ -49,14 +55,17 @@ export const Cart = () => {
 									</option>
 								))}
 								</select>
-							{/* <input type="number" name="" className='input cart-input' value={item.quantity} onChange={(e)=>updateCart(item.id, Number(e.target.value))}/> */}
+								<h2>Item Total: {(item.quantity * item.price).toLocaleString('en-US', { style: 'currency', currency: 'USD' })} </h2>
 							<button className="btn" onClick={()=>removeItem(item.id)}>Remove</button>
 						</div>
 					</div>
 				))}
 				</>	
 			}
-			<button className=" btn-checkout" onClick={checkBtn}>Checkout</button>
+			<div id="cart-total">
+			<button className="btn-checkout" onClick={checkBtn}>Checkout</button>
+				<h2>Total: ${cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</h2>
+			</div>
 		</div>
 
 		<Footer/>
